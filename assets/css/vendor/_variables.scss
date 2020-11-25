@@ -1,0 +1,54 @@
+$paddingcol: 15px;
+$direction: rtl;
+$colors :(
+	"primary": #007bff,
+	"secondary": #6c757d,
+	"success": #28a745,
+	"danger": #dc3545,
+	"warning": #ffc107,
+	"info": #17a2b8,
+	"dark": #343a40,
+	"light": #f8f9fa,
+);
+$text-body: #000000;
+$text-muted: #495057;
+$border-radius: 4px;
+$border-color: #f8f9fa;
+$box-background: #fff;
+$background-color: #f0f6f5;
+
+$breakpoint :("-xs": 576px,"-sm": 768px,"-md": 992px,"-lg": 1200px,"-xl": '');
+
+@function pxrem($size){
+	$pxSize : $size + 0px;
+	$remSize: $pxSize / 16px;
+	@return $remSizerem + 0rem;
+}
+@function colorLevel($hex,$level: 0) {
+	$color-base: if($level > 0, #000, #fff);
+	$level: abs($level);
+	@return mix($color-base, $hex, $level * 8%);
+}
+
+@mixin breakpoint($name) {
+	@if $name == '-xl'{
+		@media (min-width: 1200px){
+			@content;
+		}
+	} @else if $name == '-lg' {
+		@media (min-width: 992px) {
+			@content;
+		}
+	} @else if $name == '-md'{
+		@media (min-width: 768px){
+			@content;
+		}
+	} @else if $name == '-sm' {
+		@media (min-width: 576px) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+  

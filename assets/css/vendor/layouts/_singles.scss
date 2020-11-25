@@ -1,0 +1,92 @@
+.contentStyle{
+	font-size: 14px;
+	line-height: 30px;
+	p{margin:0;}
+	h1,h2,h3,h4,h5,h6{margin-top:rempx(20px);}
+	blockquote{
+		font-size: 18px;
+		line-height: 35px;
+		position: relative;
+		text-align: justify;
+		margin: rempx(20px);
+		padding: rempx(20px);
+		background-color: $box-background;
+		border-right: 5px solid map-get($colors, primary);
+		> p{
+			display:inline-block;
+			clear: both;
+			&:before{
+				content: '”';
+			}
+			&:after{
+				content: '‟';
+			}
+		}
+		cite{
+			display: block;
+			font-size: 15px;
+			font-style: normal;
+			line-height: 35px;
+			text-align: left;
+		}
+	}
+	a{
+		color: map-get($colors, info);
+		transition: all 0.3s linear;
+		&:hover{
+			color: darken(map-get($colors, info),10%);
+		}
+	}
+	ul{
+		padding: 0;
+		line-height: 30px;
+		margin: rempx(15px) auto;
+		list-style: none;
+		> li{
+			position: relative;
+			padding-right: rempx(20px);
+			&:before{
+				top: 50%;
+				right: 0px;
+				content: '';
+				width: 6px;
+				height: 6px;
+				position: absolute;
+				border-radius: 50%;
+				transform: translateY(-50%);
+				background-color: map-get($colors, secondary);
+			}
+		}
+	}
+	mark{
+		color: #fff;
+		background-color: map-get($colors, secondary);
+		&.style2{
+			color: $text-body;
+			background-color: #E5F4FA;
+		}
+	}
+	u{
+		padding-bottom:5px;
+		text-decoration:none;
+		border-bottom:1px solid map-get($colors, primary);
+	}
+}
+
+#comments{
+	padding:0;
+	list-style: none;
+	margin: 20px -20px -20px;
+	li{
+		border-top: 1px solid $border-color;
+		.comment-body{
+			display: grid;
+			position: relative;
+			grid-gap: 1rem;
+			grid-template-columns: minmax(0,64px) minmax(0,1fr);
+			.avatar{
+				border-radius: 10px;
+			}
+		}
+	}
+}

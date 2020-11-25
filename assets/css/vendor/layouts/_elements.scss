@@ -1,0 +1,27 @@
+.pagination{
+	display: flex;
+	margin-top: 3rem;
+	align-items: center;
+	justify-content: center;
+	.page-numbers{
+		height: 30px;
+		margin: 0 5px;
+		min-width: 30px;
+		font-size: 15px;
+		justify-content: center;
+		align-items: center;
+		display: inline-flex;
+		border-radius: 30px;
+		transition: all 0.3s linear;
+		&.dots{pointer-events:none;}
+		&.current,&:hover{
+			color: map-get($colors, secondary);
+			background-color: $box-background;
+			box-shadow: 0px 5px 10px 0px rgba(0,1,1,0.05);
+		}
+		&.current{
+			font-size: 17px;
+			transform: scale(1.3);
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@font-face {
+	font-family:iransans;
+	src:url(assets/font/iransans/Regular.woff2) format("woff2");
+	font-weight:normal;
+	font-display:swap
+}
+@font-face {
+	font-family:iransans;
+	src:url(assets/font/iransans/Bold.woff2) format("woff2");
+	font-weight:bold;
+	font-display:swap;
+}
+
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6,body.rtl,body.rtl .press-this a.wp-switch-editor,.rtl input,.rtl textarea,.rtl select,.rtl option,.rtl .media-frame, .rtl .media-frame .search, .rtl .media-frame input[type="email"], .rtl .media-frame input[type="number"], .rtl .media-frame input[type="password"], .rtl .media-frame input[type="search"], .rtl .media-frame input[type="tel"], .rtl .media-frame input[type="text"], .rtl .media-frame input[type="url"], .rtl .media-frame select, .rtl .media-frame textarea, .rtl .media-modal,.rtl .wp-editor-area,.rtl #wpadminbar *,.vc_element_label, .wpb_element_label,.wp-core-ui .button, .wp-core-ui .button-secondary{font-family:iransans,sans-serif;}
+.dashicons, .dashicons-before::before{font-family:dashicons!important}

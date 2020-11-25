@@ -1,0 +1,20 @@
+{
+	"autoprefixer.ignoreFilesOnSave": ["assets/css/vendor/**"],
+	"liveSassCompile.settings.formats":[
+	   {
+		   "extensionName": ".css",
+		   "format": "compressed",
+		   "savePath": "/assets/css"
+	   }
+   ],
+   "liveSassCompile.settings.excludeList": [
+	  "**/node_modules/**",
+	  ".vscode/**"
+   ],
+   "liveSassCompile.settings.generateMap": false,
+   "liveSassCompile.settings.autoprefix": [
+	   "> 1%",
+	   "last 4 versions"
+	],
+	"liveServer.settings.port": 5501
+}
