@@ -41,7 +41,7 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 			const menu = new MmenuLight(document.querySelector('#mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
 			menu.navigation({
 				selectedClass: 'Selected',
-				title: $('#mmenu').data('title')
+				title: $('#mmenu').data('mm-spn-title')
 			});
 			$('[href="#mmenu"]').click(function (e) { 
 				e.preventDefault();
