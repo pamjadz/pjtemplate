@@ -1,8 +1,18 @@
 .table {
 	width: 100%;
-	max-width: 100%;
+	color: $text-body;
 	margin-bottom: 1rem;
-	background-color: transparent;
+	vertical-align: top;
+	border-color: $border-color;
+	&.caption-top {caption-side: top;}
+	> :not(caption) > * > * {
+		padding: 0.5rem 0.5rem;
+		border-bottom-width: 1px;
+	}
+	> tbody {vertical-align: inherit;}
+	> thead {vertical-align: bottom;}
+	> :not(:last-child) > :last-child > * {border-bottom-color: currentColor;}
+
 	th, td {
 		padding: 0.75rem;
 		vertical-align: top;
@@ -14,9 +24,6 @@
 	}
 	tbody + tbody {
 		border-top: 2px solid #dee2e6;
-	}
-	.table {
-		background-color: #fff;
 	}
 	&.table-bordered {
 		border: 1px solid #dee2e6;

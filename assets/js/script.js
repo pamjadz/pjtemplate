@@ -31,87 +31,27 @@ const imageObserver = new IntersectionObserver((entries, imgObserver) => {
 	});
 });
 
-(function($){
-	$.fn.pjperspective = function(){
-		let container = this, inner = $(this).find('.pj-item');
-		var mouse = {
-		_x: 0,
-		_y: 0,
-		x: 0,
-		y: 0,
-		updatePosition: function(event) {
-		var e = event || window.event;
-		this.x = e.clientX - this._x;
-		this.y = (e.clientY - this._y) * -1;
-		},
-		setOrigin: function(e) {
-		this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-		this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
-		},
-		show: function() {
-		return "(" + this.x + ", " + this.y + ")";
-		}
-		};
-		mouse.setOrigin(container);
-		let counter = 0, updateRate = 10;
-		var isTimeToUpdate = function() {
-			return counter++ % updateRate === 0;
-		};
-		var onMouseEnterHandler = function(event) {
-			update(event);
-		};
-		var onMouseLeaveHandler = function() {
-			inner.style = "";
-		};
-		var onMouseMoveHandler = function(event) {
-			if (isTimeToUpdate()) {
-				update(event);
-			}
-		};
-		var update = function(event) {
-			mouse.updatePosition(event);
-			updateTransformStyle(
-				(mouse.y / inner.offsetHeight / 2).toFixed(2),
-				(mouse.x / inner.offsetWidth / 2).toFixed(2)
-			);
-		};
-		var updateTransformStyle = function(x, y) {
-			var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-			inner.style.transform = style;
-			inner.style.webkitTransform = style;
-			inner.style.mozTransform = style;
-			inner.style.msTransform = style;
-			inner.style.oTransform = style;
-		};
-		container.onmouseenter = onMouseEnterHandler;
-		container.onmouseleave = onMouseLeaveHandler;
-		container.onmousemove = onMouseMoveHandler;
-	};
-}( jQuery ));
-
 //Main JS
 require(['mmenu', 'bootstrap', 'slick'], function($){
 	jQuery(document).ready(function($){
 		"use strict";
 
 		//MmenuJS
-		const menu = new MmenuLight(document.querySelector('#mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
-		menu.navigation({
-			selectedClass: 'Selected',
-			title: $('#mmenu').data('title')
-		});
-		$('[href="#mmenu"]').click(function (e) { 
-			e.preventDefault();
-			drawer.open();
-		});
-
+		if(document.querySelector('#mmenu')){
+			const menu = new MmenuLight(document.querySelector('#mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
+			menu.navigation({
+				selectedClass: 'Selected',
+				title: $('#mmenu').data('title')
+			});
+			$('[href="#mmenu"]').click(function (e) { 
+				e.preventDefault();
+				drawer.open();
+			});
+		}
+		
 		function initjsFuncs(){
 			$('[data-lazy]').each(function(){
 				imageObserver.observe(this);
-			});
-			$('.custom-file .custom-file-input').change(function(){
-				var file = $(this)[0].files[0].name;
-				$(this).parent().find('.custom-file-label').text(file);
 			});
 			$('.slick-carousel').each(function(){
 				let defaults = {"infinite":true,"margin":0,"items":1,"rtl": ((document.dir == 'rtl') ? true : false)},
@@ -120,7 +60,6 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 				$(this).slick(argumans);
 			});
 			$('[data-toggle="tooltip"]').tooltip();
-			$('[data-toggle="perspective"]').pjperspective();
 		}
 		initjsFuncs();
 

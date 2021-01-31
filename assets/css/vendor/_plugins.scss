@@ -1,9 +1,3 @@
 @import 'plugins/mmenu';
 @import 'plugins/slick';
-
-[data-toggle="perspective"]{
-	perspective: 40px;
-	.pj-item{
-		transition: transform 0.5s;
-	}
-}
+// @import 'plugins/animations';

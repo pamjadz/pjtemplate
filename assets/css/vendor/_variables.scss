@@ -1,5 +1,5 @@
-$paddingcol: 15px;
-$direction: rtl;
+$gutter: 1.5rem;
+$direction: ltr;
 $colors :(
 	"primary": #007bff,
 	"secondary": #6c757d,
@@ -10,45 +10,23 @@ $colors :(
 	"dark": #343a40,
 	"light": #f8f9fa,
 );
-$text-body: #000000;
+$text-body: #212529;
 $text-muted: #495057;
-$border-radius: 4px;
-$border-color: #f8f9fa;
+$border-radius: 0.25rem;
+$border-color: #ced4da;
 $box-background: #fff;
-$background-color: #f0f6f5;
-
-$breakpoint :("-xs": 576px,"-sm": 768px,"-md": 992px,"-lg": 1200px,"-xl": '');
+$background-color: #eee;
 
 @function pxrem($size){
 	$pxSize : $size + 0px;
 	$remSize: $pxSize / 16px;
-	@return $remSizerem + 0rem;
+	@return $remSize + 0rem;
 }
-@function colorLevel($hex,$level: 0) {
-	$color-base: if($level > 0, #000, #fff);
-	$level: abs($level);
-	@return mix($color-base, $hex, $level * 8%);
+@function colorLevel($hex, $level){
+	$colorbase: if($level > 0, black, white);
+	$level: abs($level) * 1%;
+	$level: if($level > 100, 100, $level);
+	@return mix($colorbase, $hex, $level);
 }
 
-@mixin breakpoint($name) {
-	@if $name == '-xl'{
-		@media (min-width: 1200px){
-			@content;
-		}
-	} @else if $name == '-lg' {
-		@media (min-width: 992px) {
-			@content;
-		}
-	} @else if $name == '-md'{
-		@media (min-width: 768px){
-			@content;
-		}
-	} @else if $name == '-sm' {
-		@media (min-width: 576px) {
-			@content;
-		}
-	} @else {
-		@content;
-	}
-}
-  
+$breakpoint :("-xs" : 0px,"-sm": 576px,"-md": 768px,"-lg": 992px,"-xl": 1200px,"-xxl": 1400px);

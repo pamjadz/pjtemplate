@@ -1,33 +1,19 @@
 @charset "UTF-8";
 @import 'variables';
+::selection{color:#fff;background-color:lighten(map-get($colors, primary), 10%);}
 @import 'fonts';
-@import 'plugins';
-::selection{color:#fff;background-color:lighten(map-get($colors, primary),15%);}
 body{
 	color: $text-body;
+	direction: $direction;
 	font-size: 13px;
 	font-weight: 400;
 	font-family: iransans, Tahoma;
-	background-color:$background-color;
-	&.single_blog{background-color:$box-background;}
+	background-color: $background-color;
 }
 @import 'layouts/header';
 @import 'layouts/elements';
 @import 'layouts/singles';
 @import 'layouts/aside';
 @import 'layouts/footer';
-body.error404{
-	display: flex;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
-	background-color: #fff;
-	.wrap404{
-		min-height: 600px;
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: auto 600px;
-		background-image: url(../img/error404.png);
-	}
-}
 @import 'responsive';
+@import 'plugins';
