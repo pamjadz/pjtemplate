@@ -152,55 +152,43 @@
 .align-self-baseline{align-self:baseline!important}
 .align-self-stretch{align-self:stretch!important}
 
-.m-0{margin:0!important}
-.m-1{margin:.25rem!important}
-.m-2{margin:.5rem!important}
-.m-3{margin:1rem!important}
-.m-4{margin:1.5rem!important}
-.m-5{margin:3rem!important}
+@for $i from 0 through 5 {
+	@if $i == 5 {
+		$rem : 3rem;
+	} @else if ($i == 4){
+		$rem: 1.5rem;
+	} @else if ($i == 3){
+		$rem: 1rem;
+	} @else if ($i == 2){
+		$rem: .5rem;
+	} @else if ($i == 1){
+		$rem: .25rem;
+	} @else {
+		$rem : 0;
+	}
+	.m-#{$i}{margin:#{$rem}!important}
+	.m-n#{$i}{margin:-#{$rem}!important}
+	.mx-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+	.mx-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+	.my-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+	.my-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+	.mt-#{$i}{margin-top:#{$rem}!important}
+	.mt-n#{$i}{margin-top:-#{$rem}!important}
+	.mr-#{$i}{margin-right:#{$rem}!important}
+	.mr-n#{$i}{margin-right:-#{$rem}!important}
+	.mb-#{$i}{margin-bottom:#{$rem}!important}
+	.mb-n#{$i}{margin-bottom:-#{$rem}!important}
+	.ml-#{$i}{margin-bottom:#{$rem}!important}
+	.ml-n#{$i}{margin-bottom:-#{$rem}!important}
+}
 .m-auto{margin:auto!important}
-.mx-0{margin-right:0!important;margin-left:0!important}
-.mx-1{margin-right:.25rem!important;margin-left:.25rem!important}
-.mx-2{margin-right:.5rem!important;margin-left:.5rem!important}
-.mx-3{margin-right:1rem!important;margin-left:1rem!important}
-.mx-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-.mx-5{margin-right:3rem!important;margin-left:3rem!important}
 .mx-auto{margin-right:auto!important;margin-left:auto!important}
-.my-0{margin-top:0!important;margin-bottom:0!important}
-.my-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-.my-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-.my-3{margin-top:1rem!important;margin-bottom:1rem!important}
-.my-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-.my-5{margin-top:3rem!important;margin-bottom:3rem!important}
 .my-auto{margin-top:auto!important;margin-bottom:auto!important}
-.mt-0{margin-top:0!important}
-.mt-1{margin-top:.25rem!important}
-.mt-2{margin-top:.5rem!important}
-.mt-3{margin-top:1rem!important}
-.mt-4{margin-top:1.5rem!important}
-.mt-5{margin-top:3rem!important}
 .mt-auto{margin-top:auto!important}
-.mr-0{margin-right:0!important}
-.mr-1{margin-right:.25rem!important}
-.mr-2{margin-right:.5rem!important}
-.mr-3{margin-right:1rem!important}
-.mr-4{margin-right:1.5rem!important}
-.mr-5{margin-right:3rem!important}
 .mr-auto{margin-right:auto!important}
-.mb-0{margin-bottom:0!important}
-.mb-1{margin-bottom:.25rem!important}
-.mb-2{margin-bottom:.5rem!important}
-.mb-3{margin-bottom:1rem!important}
-.mb-4{margin-bottom:1.5rem!important}
-.mb-5{margin-bottom:3rem!important}
 .mb-auto{margin-bottom:auto!important}
-.ml-0{margin-left:0!important}
-.ml-1{margin-left:.25rem!important}
-.ml-2{margin-left:.5rem!important}
-.ml-3{margin-left:1rem!important}
-.ml-4{margin-left:1.5rem!important}
-.ml-5{margin-left:3rem!important}
 .ml-auto{margin-left:auto!important}
+
 .p-0{padding:0!important}
 .p-1{padding:.25rem!important}
 .p-2{padding:.5rem!important}
@@ -371,54 +359,41 @@
 	.order-sm-4{order:4!important}
 	.order-sm-5{order:5!important}
 	.order-sm-last{order:6!important}
-	.m-sm-0{margin:0!important}
-	.m-sm-1{margin:.25rem!important}
-	.m-sm-2{margin:.5rem!important}
-	.m-sm-3{margin:1rem!important}
-	.m-sm-4{margin:1.5rem!important}
-	.m-sm-5{margin:3rem!important}
-	.m-sm-auto{margin:auto!important}
-	.mx-sm-0{margin-right:0!important;margin-left:0!important}
-	.mx-sm-1{margin-right:.25rem!important;margin-left:.25rem!important}
-	.mx-sm-2{margin-right:.5rem!important;margin-left:.5rem!important}
-	.mx-sm-3{margin-right:1rem!important;margin-left:1rem!important}
-	.mx-sm-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-	.mx-sm-5{margin-right:3rem!important;margin-left:3rem!important}
+	@for $i from 0 through 5 {
+		@if $i == 5 {
+			$rem : 3rem;
+		} @else if ($i == 4){
+			$rem: 1.5rem;
+		} @else if ($i == 3){
+			$rem: 1rem;
+		} @else if ($i == 2){
+			$rem: .5rem;
+		} @else if ($i == 1){
+			$rem: .25rem;
+		} @else {
+			$rem : 0;
+		}
+		.m-sm-#{$i}{margin:#{$rem}!important}
+		.m-sm-n#{$i}{margin:-#{$rem}!important}
+		.mx-sm-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+		.mx-sm-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.my-sm-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+		.my-sm-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+		.mt-sm-#{$i}{margin-top:#{$rem}!important}
+		.mt-sm-n#{$i}{margin-top:-#{$rem}!important}
+		.mr-sm-#{$i}{margin-right:#{$rem}!important}
+		.mr-sm-n#{$i}{margin-right:-#{$rem}!important}
+		.mb-sm-#{$i}{margin-bottom:#{$rem}!important}
+		.mb-sm-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-sm-#{$i}{margin-bottom:#{$rem}!important}
+		.ml-sm-n#{$i}{margin-bottom:-#{$rem}!important}
+	}
+	.m-sm-sm-auto{margin:auto!important}
 	.mx-sm-auto{margin-right:auto!important;margin-left:auto!important}
-	.my-sm-0{margin-top:0!important;margin-bottom:0!important}
-	.my-sm-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-	.my-sm-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-	.my-sm-3{margin-top:1rem!important;margin-bottom:1rem!important}
-	.my-sm-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-	.my-sm-5{margin-top:3rem!important;margin-bottom:3rem!important}
 	.my-sm-auto{margin-top:auto!important;margin-bottom:auto!important}
-	.mt-sm-0{margin-top:0!important}
-	.mt-sm-1{margin-top:.25rem!important}
-	.mt-sm-2{margin-top:.5rem!important}
-	.mt-sm-3{margin-top:1rem!important}
-	.mt-sm-4{margin-top:1.5rem!important}
-	.mt-sm-5{margin-top:3rem!important}
 	.mt-sm-auto{margin-top:auto!important}
-	.mr-sm-0{margin-right:0!important}
-	.mr-sm-1{margin-right:.25rem!important}
-	.mr-sm-2{margin-right:.5rem!important}
-	.mr-sm-3{margin-right:1rem!important}
-	.mr-sm-4{margin-right:1.5rem!important}
-	.mr-sm-5{margin-right:3rem!important}
 	.mr-sm-auto{margin-right:auto!important}
-	.mb-sm-0{margin-bottom:0!important}
-	.mb-sm-1{margin-bottom:.25rem!important}
-	.mb-sm-2{margin-bottom:.5rem!important}
-	.mb-sm-3{margin-bottom:1rem!important}
-	.mb-sm-4{margin-bottom:1.5rem!important}
-	.mb-sm-5{margin-bottom:3rem!important}
 	.mb-sm-auto{margin-bottom:auto!important}
-	.ml-sm-0{margin-left:0!important}
-	.ml-sm-1{margin-left:.25rem!important}
-	.ml-sm-2{margin-left:.5rem!important}
-	.ml-sm-3{margin-left:1rem!important}
-	.ml-sm-4{margin-left:1.5rem!important}
-	.ml-sm-5{margin-left:3rem!important}
 	.ml-sm-auto{margin-left:auto!important}
 	.p-sm-0{padding:0!important}
 	.p-sm-1{padding:.25rem!important}
@@ -530,54 +505,41 @@
 	.order-md-4{order:4!important}
 	.order-md-5{order:5!important}
 	.order-md-last{order:6!important}
-	.m-md-0{margin:0!important}
-	.m-md-1{margin:.25rem!important}
-	.m-md-2{margin:.5rem!important}
-	.m-md-3{margin:1rem!important}
-	.m-md-4{margin:1.5rem!important}
-	.m-md-5{margin:3rem!important}
+	@for $i from 0 through 5 {
+		@if $i == 5 {
+			$rem : 3rem;
+		} @else if ($i == 4){
+			$rem: 1.5rem;
+		} @else if ($i == 3){
+			$rem: 1rem;
+		} @else if ($i == 2){
+			$rem: .5rem;
+		} @else if ($i == 1){
+			$rem: .25rem;
+		} @else {
+			$rem : 0;
+		}
+		.m-md-#{$i}{margin:#{$rem}!important}
+		.m-md-n#{$i}{margin:-#{$rem}!important}
+		.mx-md-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+		.mx-md-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.my-md-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+		.my-md-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+		.mt-md-#{$i}{margin-top:#{$rem}!important}
+		.mt-md-n#{$i}{margin-top:-#{$rem}!important}
+		.mr-md-#{$i}{margin-right:#{$rem}!important}
+		.mr-md-n#{$i}{margin-right:-#{$rem}!important}
+		.mb-md-#{$i}{margin-bottom:#{$rem}!important}
+		.mb-md-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-md-#{$i}{margin-bottom:#{$rem}!important}
+		.ml-md-n#{$i}{margin-bottom:-#{$rem}!important}
+	}
 	.m-md-auto{margin:auto!important}
-	.mx-md-0{margin-right:0!important;margin-left:0!important}
-	.mx-md-1{margin-right:.25rem!important;margin-left:.25rem!important}
-	.mx-md-2{margin-right:.5rem!important;margin-left:.5rem!important}
-	.mx-md-3{margin-right:1rem!important;margin-left:1rem!important}
-	.mx-md-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-	.mx-md-5{margin-right:3rem!important;margin-left:3rem!important}
 	.mx-md-auto{margin-right:auto!important;margin-left:auto!important}
-	.my-md-0{margin-top:0!important;margin-bottom:0!important}
-	.my-md-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-	.my-md-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-	.my-md-3{margin-top:1rem!important;margin-bottom:1rem!important}
-	.my-md-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-	.my-md-5{margin-top:3rem!important;margin-bottom:3rem!important}
 	.my-md-auto{margin-top:auto!important;margin-bottom:auto!important}
-	.mt-md-0{margin-top:0!important}
-	.mt-md-1{margin-top:.25rem!important}
-	.mt-md-2{margin-top:.5rem!important}
-	.mt-md-3{margin-top:1rem!important}
-	.mt-md-4{margin-top:1.5rem!important}
-	.mt-md-5{margin-top:3rem!important}
 	.mt-md-auto{margin-top:auto!important}
-	.mr-md-0{margin-right:0!important}
-	.mr-md-1{margin-right:.25rem!important}
-	.mr-md-2{margin-right:.5rem!important}
-	.mr-md-3{margin-right:1rem!important}
-	.mr-md-4{margin-right:1.5rem!important}
-	.mr-md-5{margin-right:3rem!important}
 	.mr-md-auto{margin-right:auto!important}
-	.mb-md-0{margin-bottom:0!important}
-	.mb-md-1{margin-bottom:.25rem!important}
-	.mb-md-2{margin-bottom:.5rem!important}
-	.mb-md-3{margin-bottom:1rem!important}
-	.mb-md-4{margin-bottom:1.5rem!important}
-	.mb-md-5{margin-bottom:3rem!important}
 	.mb-md-auto{margin-bottom:auto!important}
-	.ml-md-0{margin-left:0!important}
-	.ml-md-1{margin-left:.25rem!important}
-	.ml-md-2{margin-left:.5rem!important}
-	.ml-md-3{margin-left:1rem!important}
-	.ml-md-4{margin-left:1.5rem!important}
-	.ml-md-5{margin-left:3rem!important}
 	.ml-md-auto{margin-left:auto!important}
 	.p-md-0{padding:0!important}
 	.p-md-1{padding:.25rem!important}
@@ -689,55 +651,43 @@
 	.order-lg-4{order:4!important}
 	.order-lg-5{order:5!important}
 	.order-lg-last{order:6!important}
-	.m-lg-0{margin:0!important}
-	.m-lg-1{margin:.25rem!important}
-	.m-lg-2{margin:.5rem!important}
-	.m-lg-3{margin:1rem!important}
-	.m-lg-4{margin:1.5rem!important}
-	.m-lg-5{margin:3rem!important}
+	@for $i from 0 through 5 {
+		@if $i == 5 {
+			$rem : 3rem;
+		} @else if ($i == 4){
+			$rem: 1.5rem;
+		} @else if ($i == 3){
+			$rem: 1rem;
+		} @else if ($i == 2){
+			$rem: .5rem;
+		} @else if ($i == 1){
+			$rem: .25rem;
+		} @else {
+			$rem : 0;
+		}
+		.m-lg-#{$i}{margin:#{$rem}!important}
+		.m-lg-n#{$i}{margin:-#{$rem}!important}
+		.mx-lg-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+		.mx-lg-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.my-lg-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+		.my-lg-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+		.mt-lg-#{$i}{margin-top:#{$rem}!important}
+		.mt-lg-n#{$i}{margin-top:-#{$rem}!important}
+		.mr-lg-#{$i}{margin-right:#{$rem}!important}
+		.mr-lg-n#{$i}{margin-right:-#{$rem}!important}
+		.mb-lg-#{$i}{margin-bottom:#{$rem}!important}
+		.mb-lg-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-lg-#{$i}{margin-bottom:#{$rem}!important}
+		.ml-lg-n#{$i}{margin-bottom:-#{$rem}!important}
+	}
 	.m-lg-auto{margin:auto!important}
-	.mx-lg-0{margin-right:0!important;margin-left:0!important}
-	.mx-lg-1{margin-right:.25rem!important;margin-left:.25rem!important}
-	.mx-lg-2{margin-right:.5rem!important;margin-left:.5rem!important}
-	.mx-lg-3{margin-right:1rem!important;margin-left:1rem!important}
-	.mx-lg-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-	.mx-lg-5{margin-right:3rem!important;margin-left:3rem!important}
 	.mx-lg-auto{margin-right:auto!important;margin-left:auto!important}
-	.my-lg-0{margin-top:0!important;margin-bottom:0!important}
-	.my-lg-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-	.my-lg-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-	.my-lg-3{margin-top:1rem!important;margin-bottom:1rem!important}
-	.my-lg-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-	.my-lg-5{margin-top:3rem!important;margin-bottom:3rem!important}
 	.my-lg-auto{margin-top:auto!important;margin-bottom:auto!important}
-	.mt-lg-0{margin-top:0!important}
-	.mt-lg-1{margin-top:.25rem!important}
-	.mt-lg-2{margin-top:.5rem!important}
-	.mt-lg-3{margin-top:1rem!important}
-	.mt-lg-4{margin-top:1.5rem!important}
-	.mt-lg-5{margin-top:3rem!important}
 	.mt-lg-auto{margin-top:auto!important}
-	.mr-lg-0{margin-right:0!important}
-	.mr-lg-1{margin-right:.25rem!important}
-	.mr-lg-2{margin-right:.5rem!important}
-	.mr-lg-3{margin-right:1rem!important}
-	.mr-lg-4{margin-right:1.5rem!important}
-	.mr-lg-5{margin-right:3rem!important}
 	.mr-lg-auto{margin-right:auto!important}
-	.mb-lg-0{margin-bottom:0!important}
-	.mb-lg-1{margin-bottom:.25rem!important}
-	.mb-lg-2{margin-bottom:.5rem!important}
-	.mb-lg-3{margin-bottom:1rem!important}
-	.mb-lg-4{margin-bottom:1.5rem!important}
-	.mb-lg-5{margin-bottom:3rem!important}
 	.mb-lg-auto{margin-bottom:auto!important}
-	.ml-lg-0{margin-left:0!important}
-	.ml-lg-1{margin-left:.25rem!important}
-	.ml-lg-2{margin-left:.5rem!important}
-	.ml-lg-3{margin-left:1rem!important}
-	.ml-lg-4{margin-left:1.5rem!important}
-	.ml-lg-5{margin-left:3rem!important}
 	.ml-lg-auto{margin-left:auto!important}
+
 	.p-lg-0{padding:0!important}
 	.p-lg-1{padding:.25rem!important}
 	.p-lg-2{padding:.5rem!important}
@@ -848,55 +798,43 @@
 	.order-xl-4{order:4!important}
 	.order-xl-5{order:5!important}
 	.order-xl-last{order:6!important}
-	.m-xl-0{margin:0!important}
-	.m-xl-1{margin:.25rem!important}
-	.m-xl-2{margin:.5rem!important}
-	.m-xl-3{margin:1rem!important}
-	.m-xl-4{margin:1.5rem!important}
-	.m-xl-5{margin:3rem!important}
+	@for $i from 0 through 5 {
+		@if $i == 5 {
+			$rem : 3rem;
+		} @else if ($i == 4){
+			$rem: 1.5rem;
+		} @else if ($i == 3){
+			$rem: 1rem;
+		} @else if ($i == 2){
+			$rem: .5rem;
+		} @else if ($i == 1){
+			$rem: .25rem;
+		} @else {
+			$rem : 0;
+		}
+		.m-xl-#{$i}{margin:#{$rem}!important}
+		.m-xl-n#{$i}{margin:-#{$rem}!important}
+		.mx-xl-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+		.mx-xl-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.my-xl-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+		.my-xl-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+		.mt-xl-#{$i}{margin-top:#{$rem}!important}
+		.mt-xl-n#{$i}{margin-top:-#{$rem}!important}
+		.mr-xl-#{$i}{margin-right:#{$rem}!important}
+		.mr-xl-n#{$i}{margin-right:-#{$rem}!important}
+		.mb-xl-#{$i}{margin-bottom:#{$rem}!important}
+		.mb-xl-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-xl-#{$i}{margin-bottom:#{$rem}!important}
+		.ml-xl-n#{$i}{margin-bottom:-#{$rem}!important}
+	}
 	.m-xl-auto{margin:auto!important}
-	.mx-xl-0{margin-right:0!important;margin-left:0!important}
-	.mx-xl-1{margin-right:.25rem!important;margin-left:.25rem!important}
-	.mx-xl-2{margin-right:.5rem!important;margin-left:.5rem!important}
-	.mx-xl-3{margin-right:1rem!important;margin-left:1rem!important}
-	.mx-xl-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-	.mx-xl-5{margin-right:3rem!important;margin-left:3rem!important}
 	.mx-xl-auto{margin-right:auto!important;margin-left:auto!important}
-	.my-xl-0{margin-top:0!important;margin-bottom:0!important}
-	.my-xl-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-	.my-xl-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-	.my-xl-3{margin-top:1rem!important;margin-bottom:1rem!important}
-	.my-xl-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-	.my-xl-5{margin-top:3rem!important;margin-bottom:3rem!important}
 	.my-xl-auto{margin-top:auto!important;margin-bottom:auto!important}
-	.mt-xl-0{margin-top:0!important}
-	.mt-xl-1{margin-top:.25rem!important}
-	.mt-xl-2{margin-top:.5rem!important}
-	.mt-xl-3{margin-top:1rem!important}
-	.mt-xl-4{margin-top:1.5rem!important}
-	.mt-xl-5{margin-top:3rem!important}
 	.mt-xl-auto{margin-top:auto!important}
-	.mr-xl-0{margin-right:0!important}
-	.mr-xl-1{margin-right:.25rem!important}
-	.mr-xl-2{margin-right:.5rem!important}
-	.mr-xl-3{margin-right:1rem!important}
-	.mr-xl-4{margin-right:1.5rem!important}
-	.mr-xl-5{margin-right:3rem!important}
 	.mr-xl-auto{margin-right:auto!important}
-	.mb-xl-0{margin-bottom:0!important}
-	.mb-xl-1{margin-bottom:.25rem!important}
-	.mb-xl-2{margin-bottom:.5rem!important}
-	.mb-xl-3{margin-bottom:1rem!important}
-	.mb-xl-4{margin-bottom:1.5rem!important}
-	.mb-xl-5{margin-bottom:3rem!important}
 	.mb-xl-auto{margin-bottom:auto!important}
-	.ml-xl-0{margin-left:0!important}
-	.ml-xl-1{margin-left:.25rem!important}
-	.ml-xl-2{margin-left:.5rem!important}
-	.ml-xl-3{margin-left:1rem!important}
-	.ml-xl-4{margin-left:1.5rem!important}
-	.ml-xl-5{margin-left:3rem!important}
 	.ml-xl-auto{margin-left:auto!important}
+
 	.p-xl-0{padding:0!important}
 	.p-xl-1{padding:.25rem!important}
 	.p-xl-2{padding:.5rem!important}
@@ -1007,54 +945,41 @@
 	.order-xxl-4{order:4!important}
 	.order-xxl-5{order:5!important}
 	.order-xxl-last{order:6!important}
-	.m-xxl-0{margin:0!important}
-	.m-xxl-1{margin:.25rem!important}
-	.m-xxl-2{margin:.5rem!important}
-	.m-xxl-3{margin:1rem!important}
-	.m-xxl-4{margin:1.5rem!important}
-	.m-xxl-5{margin:3rem!important}
+	@for $i from 0 through 5{
+		@if $i == 5 {
+			$rem : 3rem;
+		} @else if ($i == 4){
+			$rem: 1.5rem;
+		} @else if ($i == 3){
+			$rem: 1rem;
+		} @else if ($i == 2){
+			$rem: .5rem;
+		} @else if ($i == 1){
+			$rem: .25rem;
+		} @else {
+			$rem : 0;
+		}
+		.m-xxl-#{$i}{margin:#{$rem}!important}
+		.m-xxl-n#{$i}{margin:-#{$rem}!important}
+		.mx-xxl-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
+		.mx-xxl-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.my-xxl-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
+		.my-xxl-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
+		.mt-xxl-#{$i}{margin-top:#{$rem}!important}
+		.mt-xxl-n#{$i}{margin-top:-#{$rem}!important}
+		.mr-xxl-#{$i}{margin-right:#{$rem}!important}
+		.mr-xxl-n#{$i}{margin-right:-#{$rem}!important}
+		.mb-xxl-#{$i}{margin-bottom:#{$rem}!important}
+		.mb-xxl-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-xxl-#{$i}{margin-bottom:#{$rem}!important}
+		.ml-xxl-n#{$i}{margin-bottom:-#{$rem}!important}
+	}
 	.m-xxl-auto{margin:auto!important}
-	.mx-xxl-0{margin-right:0!important;margin-left:0!important}
-	.mx-xxl-1{margin-right:.25rem!important;margin-left:.25rem!important}
-	.mx-xxl-2{margin-right:.5rem!important;margin-left:.5rem!important}
-	.mx-xxl-3{margin-right:1rem!important;margin-left:1rem!important}
-	.mx-xxl-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
-	.mx-xxl-5{margin-right:3rem!important;margin-left:3rem!important}
 	.mx-xxl-auto{margin-right:auto!important;margin-left:auto!important}
-	.my-xxl-0{margin-top:0!important;margin-bottom:0!important}
-	.my-xxl-1{margin-top:.25rem!important;margin-bottom:.25rem!important}
-	.my-xxl-2{margin-top:.5rem!important;margin-bottom:.5rem!important}
-	.my-xxl-3{margin-top:1rem!important;margin-bottom:1rem!important}
-	.my-xxl-4{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
-	.my-xxl-5{margin-top:3rem!important;margin-bottom:3rem!important}
 	.my-xxl-auto{margin-top:auto!important;margin-bottom:auto!important}
-	.mt-xxl-0{margin-top:0!important}
-	.mt-xxl-1{margin-top:.25rem!important}
-	.mt-xxl-2{margin-top:.5rem!important}
-	.mt-xxl-3{margin-top:1rem!important}
-	.mt-xxl-4{margin-top:1.5rem!important}
-	.mt-xxl-5{margin-top:3rem!important}
 	.mt-xxl-auto{margin-top:auto!important}
-	.mr-xxl-0{margin-right:0!important}
-	.mr-xxl-1{margin-right:.25rem!important}
-	.mr-xxl-2{margin-right:.5rem!important}
-	.mr-xxl-3{margin-right:1rem!important}
-	.mr-xxl-4{margin-right:1.5rem!important}
-	.mr-xxl-5{margin-right:3rem!important}
 	.mr-xxl-auto{margin-right:auto!important}
-	.mb-xxl-0{margin-bottom:0!important}
-	.mb-xxl-1{margin-bottom:.25rem!important}
-	.mb-xxl-2{margin-bottom:.5rem!important}
-	.mb-xxl-3{margin-bottom:1rem!important}
-	.mb-xxl-4{margin-bottom:1.5rem!important}
-	.mb-xxl-5{margin-bottom:3rem!important}
 	.mb-xxl-auto{margin-bottom:auto!important}
-	.ml-xxl-0{margin-left:0!important}
-	.ml-xxl-1{margin-left:.25rem!important}
-	.ml-xxl-2{margin-left:.5rem!important}
-	.ml-xxl-3{margin-left:1rem!important}
-	.ml-xxl-4{margin-left:1.5rem!important}
-	.ml-xxl-5{margin-left:3rem!important}
 	.ml-xxl-auto{margin-left:auto!important}
 	.p-xxl-0{padding:0!important}
 	.p-xxl-1{padding:.25rem!important}
@@ -1126,7 +1051,7 @@
 	.d-print-none{display:none!important}
 }
 
-.embed-responsive {
+.embed-responsive{
 	padding: 0;
 	width: 100%;
 	display: block;
