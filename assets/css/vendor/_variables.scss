@@ -1,5 +1,11 @@
 $gutter: 1.5rem;
 $direction: rtl;
+$text-body: #212529;
+$text-muted: #495057;
+$border-radius: 0.25rem;
+$border-color: #ced4da;
+$box-background: #fff;
+$background-color: #eee;
 $colors :(
 	"primary": #007bff,
 	"secondary": #6c757d,
@@ -7,18 +13,31 @@ $colors :(
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
+	"dark" : $text-body,
+	"light" : $text-muted,
+	//WpBakery
+	"blue" : #5472d2,
+	"turquoise" : #00c1cf,
+	"pink" : #fe6c61,
+	"violet" : #8d6dc4,
+	"peacoc" : #4cadc9,
+	"chino" : #cec2ab,
+	"mulled-wine" : #50485b,
+	"vista-blue" : #75d69c,
+	"black" : #2a2a2a,
+	"grey" : #ebebeb,
+	"orange" : #f7be68,
+	"sky" : #5aa1e3,
+	"green" : #6dab3c,
+	"juicy-pink" : #f4524d,
+	"sandy-brown" : #f79468,
+	"purple" : #b97ebb,
 );
-$text-body: #212529;
-$text-muted: #495057;
-$border-radius: 0.25rem;
-$border-color: #ced4da;
-$box-background: #fff;
-$background-color: #eee;
 
 @function pxrem($size){
-	$pxSize : $size + 0px;
-	$remSize: $pxSize / 16px;
-	@return $remSize + 0rem;
+	$size : $size + 0px;
+	$size: $size / 16px;
+	@return $size + 0rem;
 }
 @function colorLevel($hex, $level){
 	$colorbase: if($level > 0, black, white);
