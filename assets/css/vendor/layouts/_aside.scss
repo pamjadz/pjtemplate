@@ -1,89 +1,11 @@
 #sidebar{
-	.send-resume{
-		overflow: hidden;
-		position: relative;
-		&:before{
-			content: '';
-			top:0;
-			right:0;
-			z-index:0;
-			width:100%;
-			height:100%;
-			opacity:0.2;
-			position: absolute;
-			background-size: 100% auto;
-			background-position: bottom center;
-			background-image: url(../img/bgmain.jpg);
-		}
-		&:after{
-			top:0;
-			right:0;
-			width:100%;
-			height:100%;
-			content:'';
-			z-index:1;
-			position: absolute;
-			background-image: linear-gradient(-180deg,$box-background 25%,hsla(0, 0%, 100%, 0));
-		}
-		> #resumeWrap{
-			z-index:10;
-			position: relative;
-		}
-		.ajax-loader{
-			left: 15px;
-			margin: auto;
-			position: absolute;
-		}
-		.wpcf7-response-output{
-			margin:15px 0 0;
-			padding:0 15px;
-			line-height:35px;
-			border-radius:$border-radius;
-		}
-	}
-	#filterside{
-		.filter-section{
-			border-bottom: 1px solid $border-color;
-			&:last-child{border-bottom:none;}
-			.filter-content{
-				padding: 0 15px 15px!important;
-			}
-		}
-		.filter-title{
-			width: 100%;
-			border: none;
-			padding: 15px;
-			font-size: 14px;
-			font-weight: 500;
-			text-align: right;
-			appearance: none;
-			position: relative;
-			display: flex;
-			cursor: pointer;
-			letter-spacing: -0.5px;
-			align-items: center;
-			background-color: transparent;
-		}
-	}
 	.widget{
-		padding: 20px;
-		margin-bottom: 32px;
-		border: 1px solid $border-color;
 		.widget-title{
-			font-size: 16px;
-			line-height: 35px;
-			padding: 10px 20px;
-			margin: -20px -20px 20px;
-			border-bottom: 1px solid $border-color;
 		}
-		.searchwidget{
-			box-shadow: none;
-			border-radius: 0px;
-			border: 1px solid $border-color;
-			.btn{
-				width: 40px;
-				text-align: center;
-			}
-		}
+		&.widget_search{}
+		&.widget_categories{}
+		&.widget_archive{}
+		&.widget_recent_entries{}
+		&.widget_tag_cloud{}
 	}
 }
