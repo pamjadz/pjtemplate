@@ -153,18 +153,17 @@
 .align-self-stretch{align-self:stretch!important}
 
 @for $i from 0 through 5 {
+	$rem : 0;
 	@if $i == 5 {
 		$rem : 3rem;
-	} @else if ($i == 4){
+	} @else if $i == 4{
 		$rem: 1.5rem;
-	} @else if ($i == 3){
+	} @else if $i == 3{
 		$rem: 1rem;
-	} @else if ($i == 2){
+	} @else if $i == 2{
 		$rem: .5rem;
-	} @else if ($i == 1){
+	} @else if $i == 1{
 		$rem: .25rem;
-	} @else {
-		$rem : 0;
 	}
 	.m-#{$i}{margin:#{$rem}!important}
 	.m-n#{$i}{margin:-#{$rem}!important}
@@ -178,8 +177,8 @@
 	.mr-n#{$i}{margin-right:-#{$rem}!important}
 	.mb-#{$i}{margin-bottom:#{$rem}!important}
 	.mb-n#{$i}{margin-bottom:-#{$rem}!important}
-	.ml-#{$i}{margin-bottom:#{$rem}!important}
-	.ml-n#{$i}{margin-bottom:-#{$rem}!important}
+	.ml-#{$i}{margin-left:#{$rem}!important}
+	.ml-n#{$i}{margin-left:-#{$rem}!important}
 }
 .m-auto{margin:auto!important}
 .mx-auto{margin-right:auto!important;margin-left:auto!important}
@@ -233,12 +232,12 @@
 .pl-5{padding-left:3rem!important}
 .fst-italic{font-style:italic!important}
 .fst-normal{font-style:normal!important}
-.fw-light{font-weight:300!important}
-.fw-lighter{font-weight:lighter!important}
-.fw-normal{font-weight:400!important}
-.fw-medium{font-weight:500!important}
-.fw-bold{font-weight:700!important}
-.fw-bolder{font-weight:bolder!important}
+.fw-lighter{font-weight:200!important;font-variation-settings: "wght" 200}
+.fw-light{font-weight:300!important;font-variation-settings: "wght" 300}
+.fw-normal{font-weight:400!important;font-variation-settings: "wght" 400}
+.fw-medium{font-weight:500!important;font-variation-settings: "wght" 500}
+.fw-bold{font-weight:700!important;font-variation-settings: "wght" 700}
+.fw-bolder{font-weight:bolder!important;font-variation-settings: "wght" 900}
 .text-lowercase{text-transform:lowercase!important}
 .text-uppercase{text-transform:uppercase!important}
 .text-capitalize{text-transform:capitalize!important}
@@ -360,18 +359,17 @@
 	.order-sm-5{order:5!important}
 	.order-sm-last{order:6!important}
 	@for $i from 0 through 5 {
+		$rem : 0;
 		@if $i == 5 {
 			$rem : 3rem;
-		} @else if ($i == 4){
+		} @else if $i == 4{
 			$rem: 1.5rem;
-		} @else if ($i == 3){
+		} @else if $i == 3{
 			$rem: 1rem;
-		} @else if ($i == 2){
+		} @else if $i == 2{
 			$rem: .5rem;
-		} @else if ($i == 1){
+		} @else if $i == 1{
 			$rem: .25rem;
-		} @else {
-			$rem : 0;
 		}
 		.m-sm-#{$i}{margin:#{$rem}!important}
 		.m-sm-n#{$i}{margin:-#{$rem}!important}
@@ -385,8 +383,8 @@
 		.mr-sm-n#{$i}{margin-right:-#{$rem}!important}
 		.mb-sm-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-sm-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-sm-#{$i}{margin-bottom:#{$rem}!important}
-		.ml-sm-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-sm-#{$i}{margin-left:#{$rem}!important}
+		.ml-sm-n#{$i}{margin-left:-#{$rem}!important}
 	}
 	.m-sm-sm-auto{margin:auto!important}
 	.mx-sm-auto{margin-right:auto!important;margin-left:auto!important}
@@ -506,18 +504,17 @@
 	.order-md-5{order:5!important}
 	.order-md-last{order:6!important}
 	@for $i from 0 through 5 {
+		$rem : 0;
 		@if $i == 5 {
 			$rem : 3rem;
-		} @else if ($i == 4){
+		} @else if $i == 4{
 			$rem: 1.5rem;
-		} @else if ($i == 3){
+		} @else if $i == 3{
 			$rem: 1rem;
-		} @else if ($i == 2){
+		} @else if $i == 2{
 			$rem: .5rem;
-		} @else if ($i == 1){
+		} @else if $i == 1{
 			$rem: .25rem;
-		} @else {
-			$rem : 0;
 		}
 		.m-md-#{$i}{margin:#{$rem}!important}
 		.m-md-n#{$i}{margin:-#{$rem}!important}
@@ -531,8 +528,8 @@
 		.mr-md-n#{$i}{margin-right:-#{$rem}!important}
 		.mb-md-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-md-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-md-#{$i}{margin-bottom:#{$rem}!important}
-		.ml-md-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-md-#{$i}{margin-left:#{$rem}!important}
+		.ml-md-n#{$i}{margin-left:-#{$rem}!important}
 	}
 	.m-md-auto{margin:auto!important}
 	.mx-md-auto{margin-right:auto!important;margin-left:auto!important}
@@ -652,18 +649,17 @@
 	.order-lg-5{order:5!important}
 	.order-lg-last{order:6!important}
 	@for $i from 0 through 5 {
+		$rem : 0;
 		@if $i == 5 {
 			$rem : 3rem;
-		} @else if ($i == 4){
+		} @else if $i == 4{
 			$rem: 1.5rem;
-		} @else if ($i == 3){
+		} @else if $i == 3{
 			$rem: 1rem;
-		} @else if ($i == 2){
+		} @else if $i == 2{
 			$rem: .5rem;
-		} @else if ($i == 1){
+		} @else if $i == 1{
 			$rem: .25rem;
-		} @else {
-			$rem : 0;
 		}
 		.m-lg-#{$i}{margin:#{$rem}!important}
 		.m-lg-n#{$i}{margin:-#{$rem}!important}
@@ -677,8 +673,8 @@
 		.mr-lg-n#{$i}{margin-right:-#{$rem}!important}
 		.mb-lg-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-lg-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-lg-#{$i}{margin-bottom:#{$rem}!important}
-		.ml-lg-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-lg-#{$i}{margin-left:#{$rem}!important}
+		.ml-lg-n#{$i}{margin-left:-#{$rem}!important}
 	}
 	.m-lg-auto{margin:auto!important}
 	.mx-lg-auto{margin-right:auto!important;margin-left:auto!important}
@@ -799,18 +795,17 @@
 	.order-xl-5{order:5!important}
 	.order-xl-last{order:6!important}
 	@for $i from 0 through 5 {
+		$rem : 0;
 		@if $i == 5 {
 			$rem : 3rem;
-		} @else if ($i == 4){
+		} @else if $i == 4{
 			$rem: 1.5rem;
-		} @else if ($i == 3){
+		} @else if $i == 3{
 			$rem: 1rem;
-		} @else if ($i == 2){
+		} @else if $i == 2{
 			$rem: .5rem;
-		} @else if ($i == 1){
+		} @else if $i == 1{
 			$rem: .25rem;
-		} @else {
-			$rem : 0;
 		}
 		.m-xl-#{$i}{margin:#{$rem}!important}
 		.m-xl-n#{$i}{margin:-#{$rem}!important}
@@ -824,8 +819,8 @@
 		.mr-xl-n#{$i}{margin-right:-#{$rem}!important}
 		.mb-xl-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-xl-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-xl-#{$i}{margin-bottom:#{$rem}!important}
-		.ml-xl-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-xl-#{$i}{margin-left:#{$rem}!important}
+		.ml-xl-n#{$i}{margin-left:-#{$rem}!important}
 	}
 	.m-xl-auto{margin:auto!important}
 	.mx-xl-auto{margin-right:auto!important;margin-left:auto!important}
@@ -946,18 +941,17 @@
 	.order-xxl-5{order:5!important}
 	.order-xxl-last{order:6!important}
 	@for $i from 0 through 5{
+		$rem : 0;
 		@if $i == 5 {
 			$rem : 3rem;
-		} @else if ($i == 4){
+		} @else if $i == 4{
 			$rem: 1.5rem;
-		} @else if ($i == 3){
+		} @else if $i == 3{
 			$rem: 1rem;
-		} @else if ($i == 2){
+		} @else if $i == 2{
 			$rem: .5rem;
-		} @else if ($i == 1){
+		} @else if $i == 1{
 			$rem: .25rem;
-		} @else {
-			$rem : 0;
 		}
 		.m-xxl-#{$i}{margin:#{$rem}!important}
 		.m-xxl-n#{$i}{margin:-#{$rem}!important}
@@ -971,8 +965,8 @@
 		.mr-xxl-n#{$i}{margin-right:-#{$rem}!important}
 		.mb-xxl-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-xxl-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-xxl-#{$i}{margin-bottom:#{$rem}!important}
-		.ml-xxl-n#{$i}{margin-bottom:-#{$rem}!important}
+		.ml-xxl-#{$i}{margin-left:#{$rem}!important}
+		.ml-xxl-n#{$i}{margin-left:-#{$rem}!important}
 	}
 	.m-xxl-auto{margin:auto!important}
 	.mx-xxl-auto{margin-right:auto!important;margin-left:auto!important}
