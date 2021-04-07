@@ -15,17 +15,12 @@ if (typeof jQuery === 'function') define('jquery', function () {
 	return jQuery;
 });
 
-//Functions
-function numberWithCommas(x){
-	x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
 //LazyLoad Observer
 const imageObserver = new IntersectionObserver((entries, imgObserver) => {
 	entries.forEach(function(entry){
 		if (entry.isIntersecting){
 			const lazyImage = entry.target;
-			lazyImage.src = lazyImage.dataset.lazy;
+			lazyImage.src = lazyImage.dataset.src;
 			imgObserver.unobserve(lazyImage);
 		}
 	});
@@ -37,12 +32,9 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 		"use strict";
 
 		//MmenuJS
-		if(document.querySelector('#mmenu')){
-			const menu = new MmenuLight(document.querySelector('#mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
-			menu.navigation({
-				selectedClass: 'Selected',
-				title: $('#mmenu').data('mm-spn-title')
-			});
+		if(document.getElementById('mmenu')){
+			const menu = new MmenuLight(document.getElementById('mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
+			menu.navigation({title: $('#mmenu').data('mm-spn-title')});
 			$('[href="#mmenu"]').click(function (e) { 
 				e.preventDefault();
 				drawer.open();
@@ -50,7 +42,7 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 		}
 		
 		function initjsFuncs(){
-			$('[data-lazy]').each(function(){
+			$('[data-src]').each(function(){
 				imageObserver.observe(this);
 			});
 			$('.slick-carousel').each(function(){
@@ -59,7 +51,7 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 					argumans = $.extend(defaults ,JSON.parse(options));
 				$(this).slick(argumans);
 			});
-			$('[data-toggle="tooltip"]').tooltip();
+			$('[data-bs-toggle="tooltip"]').tooltip();
 		}
 		initjsFuncs();
 
@@ -69,7 +61,7 @@ require(['mmenu', 'bootstrap', 'slick'], function($){
 			type : 'POST',
 			url : rqjs.getAttribute('data-ajax'),
 			data : {
-				action : 'sendresumejob',
+				action : 'actionname',
 				inputs : $(this).serialize()
 			},
 			beforeSend: function() {
