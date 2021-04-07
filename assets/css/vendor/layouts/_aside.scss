@@ -1,7 +1,8 @@
 #sidebar{
 	.widget{
-		.widget-title{
-		}
+		.widget-title{}
+
+		//Wordpress Widgets Classes
 		&.widget_search{}
 		&.widget_categories{}
 		&.widget_archive{}
