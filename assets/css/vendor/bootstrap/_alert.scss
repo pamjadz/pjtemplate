@@ -1,17 +1,17 @@
-@mixin alert-color($text,$background,$border) {
-	color:$text;
-	border-color:$border;
-	background-color:$background;
-	hr{border-top-color:$border}
+@mixin alert-color($color) {
+	color:$color;
+	border-color:$color;
+	background-color:colorLevel($color, 15);
 	.alert-link,a{color:darken($text,5%)}
 }
 
 .alert{
+	color: #a1a1a1;
+	padding: 1rem;
 	position: relative;
-	padding: 1rem 1rem;
 	margin-bottom: 1rem;
-	border: 1px solid transparent;
-	border-radius: $border-radius;
+	border-radius: 8px;
+	border-#{if($direction == rtl, right, left)}: 8px solid #a1a1a1;
 	.alert-heading{color:inherit}
 	.alert-link{font-weight:700}
 	&.alert-dismissible{
@@ -19,14 +19,6 @@
 		.btn-close{position:absolute;top:0;#{if($direction == rtl, left, right)}:0;padding: 1.25rem 1rem}
 	}
 	@each $name,$hex in $colors {
-		&.alert-#{$name}{
-			@if $name == 'dark'{
-				@include alert-color(map-get($colors,'light'),$hex,darken($hex,15%));
-			} @else if $name == 'light'{
-				@include alert-color(map-get($colors,'dark'),$hex,darken($hex,15%));
-			} @else {
-				@include alert-color(white,$hex,colorLevel($hex, 15));
-			}
-		}
+		&.alert-#{$name}{@include alert-color($hex);}
 	}
 }

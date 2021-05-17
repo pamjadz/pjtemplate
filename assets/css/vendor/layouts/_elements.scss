@@ -25,3 +25,22 @@
 		}
 	}
 }
+
+//ContactForm 7
+.wpcf7{
+	form{
+		.wpcf7-response-output{
+			margin:0;
+			padding: 0.5rem 1rem;
+			border: 2px solid #00a0d2;
+		}
+		&.init .wpcf7-response-output{display:none;}
+		&.sent .wpcf7-response-output{background-color:map-get($colors, 'success');}
+		&.failed,&.abroted{
+			.wpcf7-response-output{background-color:map-get($colors, 'danger');}
+		}
+		&.unaccepted,&.invalid,&.spam{
+			.wpcf7-response-output{background-color:map-get($colors, 'danger');}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-.contentStyle{
+.contentstyle{
 	font-size: 14px;
 	line-height: 30px;
 	p{margin:0;}
@@ -14,8 +14,8 @@
 		line-height: 35px;
 		position: relative;
 		text-align: justify;
-		margin: pxrem(20);
-		padding: pxrem(20);
+		margin: 1.5rem;
+		padding: 1.5rem;
 		background-color: $box-background;
 		border-right: 5px solid map-get($colors, 'secondary');
 		> p{
@@ -46,11 +46,11 @@
 	ul{
 		padding: 0;
 		line-height: 30px;
-		margin: pxrem(15) auto;
+		margin: 1rem auto;
 		list-style: none;
 		> li{
 			position: relative;
-			padding-right: pxrem(20);
+			padding-right: 1.5rem;
 			&:before{
 				top: 50%;
 				right: 0px;
@@ -68,4 +68,16 @@
 		color: #fff;
 		background-color: map-get($colors, 'warning');
 	}
+	img{
+		&.alignleft{float:left;margin:0 1rem 1rem 0}
+		&.alignright{float:right;margin:0 0 1rem 1rem}
+		&.aligncenter{display:block;margin-left:auto;margin-right:auto}
+	}
+}
+
+#comments{
+	padding:0;
+	margin: 0;
+	list-style: none;
+	li{}
 }
