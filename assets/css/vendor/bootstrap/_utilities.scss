@@ -243,9 +243,9 @@
 }
 
 @each $name,$hex in $colors {
-	.text-#{$name}{color:$hex;}
+	.text-#{$name}{color:$hex!important;}
 	a.text-#{$name}:hover,.text-#{$name}:focus{
-		color:darken($hex,10%);
+		color:darken($hex,10%)!important;
 	}
 }
 
