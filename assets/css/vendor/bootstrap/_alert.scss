@@ -2,7 +2,7 @@
 	color:$color;
 	border-color:$color;
 	background-color:colorLevel($color, 15);
-	.alert-link,a{color:darken($text,5%)}
+	.alert-link,a{color:darken($color,5%)}
 }
 
 .alert{
