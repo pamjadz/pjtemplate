@@ -1,4 +1,3 @@
-//Config Requirejs
 var rqjs = document.getElementById('requirejs');
 requirejs.config({
 	baseUrl: rqjs.getAttribute('src').replace('require.js',''),
@@ -15,7 +14,6 @@ if (typeof jQuery === 'function') define('jquery', function () {
 	return jQuery;
 });
 
-//LazyLoad Observer
 const imageObserver = new IntersectionObserver((entries, imgObserver) => {
 	entries.forEach(function(entry){
 		if (entry.isIntersecting){
@@ -26,33 +24,37 @@ const imageObserver = new IntersectionObserver((entries, imgObserver) => {
 	});
 });
 
-//Main JS
-require(['mmenu', 'bootstrap', 'slick'], function($){
+requirejs(['bootstrap'], function($){
 	jQuery(document).ready(function($){
 		"use strict";
 
-		//MmenuJS
 		if(document.getElementById('mmenu')){
-			const menu = new MmenuLight(document.getElementById('mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
-			menu.navigation({title: $('#mmenu').data('mm-spn-title')});
-			$('[href="#mmenu"]').click(function (e) { 
-				e.preventDefault();
-				drawer.open();
+			requirejs(['mmenu'], function(){
+				const menu = new MmenuLight(document.getElementById('mmenu')), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
+				menu.navigation({title: $('#mmenu').data('mm-spn-title')});
+				$('[href="#mmenu"]').click(function (e) { 
+					e.preventDefault();
+					drawer.open();
+				});
 			});
 		}
 		
 		function initjsFuncs(){
-			$('[data-src]').each(function(){
-				imageObserver.observe(this);
-			});
-			$('.slick-carousel').each(function(){
-				let defaults = {"infinite":true,"margin":0,"items":1,"rtl": ((document.dir == 'rtl') ? true : false)},
-					options = '{' + $(this).data('slick').replace(/'/g, '"') + '}',
-					argumans = $.extend(defaults ,JSON.parse(options));
-				$(this).slick(argumans);
-			});
+			const lazyImages = document.querySelectorAll('[data-src]');
+			for (var i = 0; i < lazyImages.length; i++) {
+				imageObserver.observe(lazyImages[i]);
+			}
+			if(document.getElementsByClassName('splide')){
+				requirejs(['splide'], function(){
+					const splides = document.getElementsByClassName('splide');
+					for ( var i = 0; i < splides.length; i++ ) {
+						new Splide(splides[i]).mount();
+					}
+				});
+			}
 			$('[data-bs-toggle="tooltip"]').tooltip();
 		}
+		
 		initjsFuncs();
 
 		/*
