@@ -13,9 +13,7 @@ $colors :(
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
-	"dark" : $text-body,
-	"light" : $text-muted,
-	//WpBakery
+	//WpBakery Remote these
 	"blue" : #5472d2,
 	"turquoise" : #00c1cf,
 	"pink" : #fe6c61,
@@ -45,5 +43,3 @@ $colors :(
 	$level: if($level > 100, 100, $level);
 	@return mix($colorbase, $hex, $level);
 }
-
-$breakpoint :("-xs" : 0px,"-sm": 576px,"-md": 768px,"-lg": 992px,"-xl": 1200px,"-xxl": 1400px);

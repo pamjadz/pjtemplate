@@ -1,4 +1,4 @@
-<li <?php comment_class(empty( $args['has_children'] ) ? 'line-height-35' :'line-height-35 parent') ?> id="comment-<?php comment_ID() ?>" itemscope itemtype="http://schema.org/Comment">
+<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>" itemscope itemtype="http://schema.org/Comment">
 <div class="meta d-block d-md-flex align-items-center mb-2 position-relative" role="complementary">
 	<img data-src="<?php echo get_avatar_url($comment, array('size' => '75','default' => THEMEURL.'assets/img/avatar.png')); ?>" alt="" class="avatar">
 	<cite class="d-block d-md-inline-flex line-height-30 ml-md-3" itemprop="author"><?php comment_author(); ?></cite>
