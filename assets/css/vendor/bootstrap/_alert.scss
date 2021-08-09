@@ -1,7 +1,7 @@
 @mixin alert-color($color) {
 	color:$color;
 	border-color:$color;
-	background-color:colorLevel($color, 15);
+	background-color:colorLevel($color, -85);
 	.alert-link,a{color:darken($color,5%)}
 }
 
