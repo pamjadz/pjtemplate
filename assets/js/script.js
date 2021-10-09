@@ -6,8 +6,8 @@ requirejs.config({
 		bootstrap: 'bootstrap.bundle.min',
 	},
 	shim : {
-        'bootstrap' : { 'deps' :['jquery'] }
-    },
+		'bootstrap' : { 'deps' :['jquery'] }
+	},
 });
 
 if (typeof jQuery === 'function') define('jquery', function () {
