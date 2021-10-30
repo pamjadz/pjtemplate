@@ -43,4 +43,10 @@
 			.wpcf7-response-output{background-color:map-get($colors, 'danger');}
 		}
 	}
+	.wpcf7-not-valid-tip {
+		display: block;
+		color: #dc3232;
+		font-size: 1em;
+		font-weight: normal;
+	}
 }
