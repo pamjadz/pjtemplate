@@ -1,0 +1,9 @@
+.posts{}
+
+.pagination{
+	.page-numbers{
+		&.dots{pointer-events:none;}
+		&.current,&:hover{}
+		&.current{}
+	}
+}

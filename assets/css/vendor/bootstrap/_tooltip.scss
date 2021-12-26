@@ -1,4 +1,5 @@
-.tooltip {
+.tooltip{
+	--bgtooltip: black;
 	position: absolute;
 	z-index: 1070;
 	display: block;
@@ -7,7 +8,6 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5;
-	text-align: left;
 	text-align: start;
 	text-decoration: none;
 	text-shadow: none;
@@ -20,80 +20,76 @@
 	font-size: 12px;
 	word-wrap: break-word;
 	opacity: 0;
+	&.show{opacity: 0.9;}
+	.tooltip-arrow {
+		position: absolute;
+		display: block;
+		width: 0.8rem;
+		height: 0.4rem;
+		&:before {
+			position: absolute;
+			content: "";
+			border-color: transparent;
+			border-style: solid;
+		}
+	}
+	.tooltip-inner {
+		--colortooltip: #fff;
+		max-width: 200px;
+		padding: 0.25rem 0.5rem;
+		color: var(--colortooltip);
+		text-align: center;
+		background-color: var(--bgtooltip);
+		border-radius: $border-radius;
+	}
+	&.bs-tooltip-top, &.bs-tooltip-auto[data-popper-placement^=top]{
+		padding: 0.4rem 0;
+		.tooltip-arrow{
+			bottom: 0;
+			&:before, &:before {
+				top: -1px;
+				border-width: 0.4rem 0.4rem 0;
+				border-top-color: var(--bgtooltip);
+			}
+		}
+	}
+	&.bs-tooltip-start, &.bs-tooltip-auto[data-popper-placement^=#{if($direction == rtl, right, left)}]{
+		padding: 0 0.4rem;
+		.tooltip-arrow{
+			#{if($direction == rtl, left, right)}: 0;
+			width: 0.4rem;
+			height: 0.8rem;
+			&:before{
+				top: -3px;
+				#{if($direction == rtl, right, left)}: -1px;
+				border-width: 0.4rem;
+				border-#{if($direction == rtl, right, left)}-color: var(--bgtooltip);
+			}
+		}
+	}
+	&.bs-tooltip-end, &.bs-tooltip-auto[data-popper-placement^=#{if($direction == rtl, left, right)}]{
+		padding: 0 0.4rem;
+		.tooltip-arrow{
+			#{if($direction == rtl, right, left)}: 0;
+			width: 0.4rem;
+			height: 0.8rem;
+			&:before{
+				top: -3px;
+				#{if($direction == rtl, left, right)}: -1px;
+				border-width: 0.4rem;
+				border-#{if($direction == rtl, left, right)}-color: var(--bgtooltip);
+			}
+		}
+	}
+	&.bs-tooltip-bottom, &.bs-tooltip-auto[data-popper-placement^=bottom]{
+		padding: 0.4rem 0;
+		.tooltip-arrow{
+			top: 0;
+			&:before, &:before {
+				bottom: -1px;
+				border-width: 0 0.4rem 0.4rem;
+				border-bottom-color: var(--bgtooltip);
+			}
+		}
+	}
 }
-  .tooltip.show {
-	opacity: 0.9;
-  }
-  .tooltip .tooltip-arrow {
-	position: absolute;
-	display: block;
-	width: 0.8rem;
-	height: 0.4rem;
-  }
-  .tooltip .tooltip-arrow::before {
-	position: absolute;
-	content: "";
-	border-color: transparent;
-	border-style: solid;
-  }
-  
-  .bs-tooltip-top, .bs-tooltip-auto[data-popper-placement^=top] {
-	padding: 0.4rem 0;
-  }
-  .bs-tooltip-top .tooltip-arrow, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow {
-	bottom: 0;
-  }
-  .bs-tooltip-top .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-	top: -1px;
-	border-width: 0.4rem 0.4rem 0;
-	border-top-color: #000;
-  }
-  
-  .bs-tooltip-end, .bs-tooltip-auto[data-popper-placement^=right] {
-	padding: 0 0.4rem;
-  }
-  .bs-tooltip-end .tooltip-arrow, .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow {
-	left: 0;
-	width: 0.4rem;
-	height: 0.8rem;
-  }
-  .bs-tooltip-end .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-	right: -1px;
-	border-width: 0.4rem 0.4rem 0.4rem 0;
-	border-right-color: #000;
-  }
-  
-  .bs-tooltip-bottom, .bs-tooltip-auto[data-popper-placement^=bottom] {
-	padding: 0.4rem 0;
-  }
-  .bs-tooltip-bottom .tooltip-arrow, .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow {
-	top: 0;
-  }
-  .bs-tooltip-bottom .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-	bottom: -1px;
-	border-width: 0 0.4rem 0.4rem;
-	border-bottom-color: #000;
-  }
-  
-  .bs-tooltip-start, .bs-tooltip-auto[data-popper-placement^=left] {
-	padding: 0 0.4rem;
-  }
-  .bs-tooltip-start .tooltip-arrow, .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow {
-	right: 0;
-	width: 0.4rem;
-	height: 0.8rem;
-  }
-  .bs-tooltip-start .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-	left: -1px;
-	border-width: 0.4rem 0 0.4rem 0.4rem;
-	border-left-color: #000;
-  }
-  
-  .tooltip-inner {
-	max-width: 200px;
-	padding: 0.25rem 0.5rem;
-	color: #fff;
-	text-align: center;
-	background-color: #000;
-	border-radius: 0.25rem;
-  }

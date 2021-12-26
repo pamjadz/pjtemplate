@@ -22,6 +22,12 @@
 	flex-wrap: wrap;
 	margin-right: calc(var(--gutter) / -2);
 	margin-left: calc(var(--gutter) / -2);
+	&.g-0{--gutter:0}
+	&.g-1{--gutter:.25rem}
+	&.g-2{--gutter:.5rem}
+	&.g-3{--gutter:1rem}
+	&.g-4{--gutter:1.5rem}
+	&.g-5{--gutter:3rem}
 	> * {
 		width: 100%;
 		max-width: 100%;
@@ -38,20 +44,6 @@
 		}
 	}
 }
-
-.g-0{--gutter:0}
-.g-1{--gutter:.25rem}
-.g-2{--gutter:.5rem}
-.g-3{--gutter:1rem}
-.g-4{--gutter:1.5rem}
-.g-5{--gutter:3rem}
-.row-cols-auto>*{flex:0 0 auto;width:auto}
-.row-cols-1>*{flex:0 0 auto;width:100%}
-.row-cols-2>*{flex:0 0 auto;width:50%}
-.row-cols-3>*{flex:0 0 auto;width:33.3333333333%}
-.row-cols-4>*{flex:0 0 auto;width:25%}
-.row-cols-5>*{flex:0 0 auto;width:20%}
-.row-cols-6>*{flex:0 0 auto;width:16.6666666667%}
 .col{flex:1 0 0}
 .col-auto{flex:0 0 auto;width:auto;max-width:none}
 .col-1{flex:0 0 8.333333%;max-width:8.333333%}
@@ -99,13 +91,6 @@
 	.g-sm-3{--gutter:1rem}
 	.g-sm-4{--gutter:1.5rem}
 	.g-sm-5{--gutter:3rem}
-	.row-cols-sm-auto>*{flex:0 0 auto;width:auto}
-	.row-cols-sm-1>*{flex:0 0 auto;width:100%}
-	.row-cols-sm-2>*{flex:0 0 auto;width:50%}
-	.row-cols-sm-3>*{flex:0 0 auto;width:33.3333333333%}
-	.row-cols-sm-4>*{flex:0 0 auto;width:25%}
-	.row-cols-sm-5>*{flex:0 0 auto;width:20%}
-	.row-cols-sm-6>*{flex:0 0 auto;width:16.6666666667%}
 	.col-sm{flex:1 0 0}
 	.col-sm-auto{flex:0 0 auto;width:auto;max-width:none}
 	.col-sm-1{flex:0 0 8.333333%;max-width:8.333333%}
@@ -154,13 +139,6 @@
 	.g-md-3{--gutter:1rem}
 	.g-md-4{--gutter:1.5rem}
 	.g-md-5{--gutter:3rem}
-	.row-cols-md-auto>*{flex:0 0 auto;width:auto}
-	.row-cols-md-1>*{flex:0 0 auto;width:100%}
-	.row-cols-md-2>*{flex:0 0 auto;width:50%}
-	.row-cols-md-3>*{flex:0 0 auto;width:33.3333333333%}
-	.row-cols-md-4>*{flex:0 0 auto;width:25%}
-	.row-cols-md-5>*{flex:0 0 auto;width:20%}
-	.row-cols-md-6>*{flex:0 0 auto;width:16.6666666667%}
 	.col-md{flex:1 0 0}
 	.col-md-auto{flex:0 0 auto;width:auto;max-width:none}
 	.col-md-1{flex:0 0 8.333333%;max-width:8.333333%}
@@ -209,13 +187,6 @@
 	.g-lg-3{--gutter:1rem}
 	.g-lg-4{--gutter:1.5rem}
 	.g-lg-5{--gutter:3rem}
-	.row-cols-lg-auto>*{flex:0 0 auto;width:auto}
-	.row-cols-lg-1>*{flex:0 0 auto;width:100%}
-	.row-cols-lg-2>*{flex:0 0 auto;width:50%}
-	.row-cols-lg-3>*{flex:0 0 auto;width:33.3333333333%}
-	.row-cols-lg-4>*{flex:0 0 auto;width:25%}
-	.row-cols-lg-5>*{flex:0 0 auto;width:20%}
-	.row-cols-lg-6>*{flex:0 0 auto;width:16.6666666667%}
 	.col-lg{flex:1 0 0}
 	.col-lg-auto{flex:0 0 auto;width:auto;max-width:none}
 	.col-lg-1{flex:0 0 8.333333%;max-width:8.333333%}
@@ -264,13 +235,6 @@
 	.g-xl-3{--gutter:1rem}
 	.g-xl-4{--gutter:1.5rem}
 	.g-xl-5{--gutter:3rem}
-	.row-cols-xl-auto>*{flex:0 0 auto;width:auto}
-	.row-cols-xl-1>*{flex:0 0 auto;width:100%}
-	.row-cols-xl-2>*{flex:0 0 auto;width:50%}
-	.row-cols-xl-3>*{flex:0 0 auto;width:33.3333333333%}
-	.row-cols-xl-4>*{flex:0 0 auto;width:25%}
-	.row-cols-xl-5>*{flex:0 0 auto;width:20%}
-	.row-cols-xl-6>*{flex:0 0 auto;width:16.6666666667%}
 	.col-xl{flex:1 0 0}
 	.col-xl-auto{flex:0 0 auto;width:auto;max-width:none}
 	.col-xl-1{flex:0 0 8.333333%;max-width:8.333333%}
@@ -319,13 +283,6 @@
 	.g-xxl-3{--gutter:1rem}
 	.g-xxl-4{--gutter:1.5rem}
 	.g-xxl-5{--gutter:3rem}
-	.row-cols-xxl-auto>*{flex:0 0 auto;width:auto}
-	.row-cols-xxl-1>*{flex:0 0 auto;width:100%}
-	.row-cols-xxl-2>*{flex:0 0 auto;width:50%}
-	.row-cols-xxl-3>*{flex:0 0 auto;width:33.3333333333%}
-	.row-cols-xxl-4>*{flex:0 0 auto;width:25%}
-	.row-cols-xxl-5>*{flex:0 0 auto;width:20%}
-	.row-cols-xxl-6>*{flex:0 0 auto;width:16.6666666667%}
 	.col-xxl{flex:1 0 0}
 	.col-xxl-auto{flex:0 0 auto;width:auto;max-width:none}
 	.col-xxl-1{flex:0 0 8.333333%;max-width:8.333333%}

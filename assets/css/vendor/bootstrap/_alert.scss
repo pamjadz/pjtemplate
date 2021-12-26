@@ -12,8 +12,6 @@
 	margin-bottom: 1rem;
 	border-radius: 8px;
 	border-#{if($direction == rtl, right, left)}: 8px solid #a1a1a1;
-	.alert-heading{color:inherit}
-	.alert-link{font-weight:700}
 	&.alert-dismissible{
 		padding-#{if($direction == rtl, left, right)}: 3rem;
 		.btn-close{position:absolute;top:0;#{if($direction == rtl, left, right)}:0;padding: 1.25rem 1rem}

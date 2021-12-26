@@ -52,7 +52,6 @@ img,svg{
 	vertical-align:middle;
 	&[height]{height:unset;}
 }
-
 table{caption-side:bottom;border-collapse:collapse}
 caption{padding-top:.5rem;padding-bottom:.5rem;color:$text-muted;text-align:#{if($direction == rtl, right, left)}}
 th{text-align:inherit;text-align:-webkit-match-parent}
@@ -70,15 +69,11 @@ button:not(:disabled),[type=button]:not(:disabled),[type=reset]:not(:disabled),[
 textarea{resize:vertical}
 fieldset{min-width:0;padding:0;margin:0;border:0}
 legend{
-	float: left;
-	padding: 0;
 	width: 100%;
+	padding: 0;
 	margin-bottom: 0.5rem;
 	font-size: calc(1.275rem + 0.3vw);
 	line-height: inherit;
-	+ * {
-		clear: left;
-	}
 }
 ::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-text,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-year-field{padding:0}
 ::-webkit-inner-spin-button{height:auto}
@@ -93,20 +88,14 @@ iframe{border:0}
 summary{display:list-item;cursor:pointer}
 progress{vertical-align:baseline}
 [hidden]{display:none!important}
-.list-unstyled{padding-left:0;list-style:none}
-.list-inline{
-	padding-left:0;list-style:none;
-	>li{display:inline-block}
-}
-.initialism{font-size:.875em;text-transform:uppercase}
 
 @import 'bootstrap/grids';
 @import 'bootstrap/tables';
 @import 'bootstrap/forms';
 @import 'bootstrap/buttons';
-@import 'bootstrap/dropdowns';
-@import 'bootstrap/badge';
 @import 'bootstrap/alert';
+@import 'bootstrap/dropdowns';
+@import 'bootstrap/offcanvas';
 @import 'bootstrap/modal';
 @import 'bootstrap/tooltip';
 @import 'bootstrap/loaders';

@@ -13,30 +13,8 @@ $colors :(
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
-	//WpBakery Remote these
-	"blue" : #5472d2,
-	"turquoise" : #00c1cf,
-	"pink" : #fe6c61,
-	"violet" : #8d6dc4,
-	"peacoc" : #4cadc9,
-	"chino" : #cec2ab,
-	"mulled-wine" : #50485b,
-	"vista-blue" : #75d69c,
-	"black" : #2a2a2a,
-	"grey" : #ebebeb,
-	"orange" : #f7be68,
-	"sky" : #5aa1e3,
-	"green" : #6dab3c,
-	"juicy-pink" : #f4524d,
-	"sandy-brown" : #f79468,
-	"purple" : #b97ebb,
 );
 
-@function pxrem($size){
-	$size : $size + 0px;
-	$size: $size / 16px;
-	@return $size + 0rem;
-}
 @function colorLevel($hex, $level){
 	$colorbase: if($level > 0, black, white);
 	$level: abs($level) * 1%;
