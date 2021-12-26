@@ -41,14 +41,21 @@
 	&.disabled, &:disabled {opacity:0.65;}
 	&:not(:disabled):not(.disabled) {cursor:pointer;}
 	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {background-image:none;}
-	&.btn-rounded{border-radius:30px;}
-	&.btn-block{width:100%;display:block;}
+	&.btn-icon{
+		display: inline-flex;
+		align-items: center;
+	}
+	&.btn-block{
+		width:100%;
+		display:block;
+		&.btn-icon{display:flex;}
+	}
 	&.btn-link{
 		font-weight: 400;
-		color: map-get($colors, primary);
+		color: map-get($colors,'primary');
 		background-color: transparent;
 		&:hover{
-			color: darken(map-get($colors, primary),5%);
+			color: darken(map-get($colors,'primary'),5%);
 			text-decoration: underline;
 			background-color: transparent;
 			border-color: transparent;
