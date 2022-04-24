@@ -93,6 +93,7 @@ select.form-control{
 		appearance: none;
 		color-adjust: exact;
 		vertical-align: top;
+		cursor: pointer;
 		background-color: $box-background;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -119,6 +120,7 @@ select.form-control{
 		&:disabled{pointer-events: none;filter: none;opacity: 0.5;}
 		&[disabled] ~ .form-check-label, &:disabled ~ .form-check-label {opacity: 0.5;}
 	}
+	.form-check-label{cursor:pointer;}
 	&.form-switch{
 		padding-#{if($direction == rtl, right, left)}: 2.5em;
 		.form-check-input{

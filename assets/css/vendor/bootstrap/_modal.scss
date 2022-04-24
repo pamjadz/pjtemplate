@@ -10,7 +10,7 @@
 	position: fixed;
 	.modal-dialog{
 		width: auto;
-		margin: 0.5rem;
+		margin: 0.5rem auto;
 		position: relative;
 		pointer-events: none;
 		&.modal-dialog-scrollable{height: calc(100% - 1rem);}

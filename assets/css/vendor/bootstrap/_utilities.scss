@@ -137,15 +137,15 @@
 .dir-ltr{direction:ltr;}
 .dir-rtl{direction:rtl;}
 
-.lh-10{line-height:10px}
-.lh-15{line-height:15px}
-.lh-20{line-height:20px}
-.lh-25{line-height:25px}
-.lh-30{line-height:30px}
-.lh-35{line-height:35px}
-.lh-40{line-height:40px}
-.lh-45{line-height:45px}
-.lh-50{line-height:50px}
+.lh-10{line-height:10px!important}
+.lh-15{line-height:15px!important}
+.lh-20{line-height:20px!important}
+.lh-25{line-height:25px!important}
+.lh-30{line-height:30px!important}
+.lh-35{line-height:35px!important}
+.lh-40{line-height:40px!important}
+.lh-45{line-height:45px!important}
+.lh-50{line-height:50px!important}
 
 .fw-lighter{font-weight:200;font-variation-settings: "wght" 200}
 .fw-light{font-weight:300;font-variation-settings: "wght" 300}
@@ -165,10 +165,10 @@
 		color:darken($hex,10%)!important;
 	}
 }
-.text-body{color:$text-body}
-.text-muted{color:$text-muted}
-.text-white{color:white}
-.text-black{color:black}
+.text-body{color:$text-body!important}
+.text-muted{color:$text-muted!important}
+.text-white{color:white!important}
+.text-black{color:black!important}
 .text-nowrap,.nobr{white-space:nowrap}
 
 @each $name,$hex in $colors {

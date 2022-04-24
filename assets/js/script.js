@@ -3,6 +3,7 @@ requirejs.config({
 	baseUrl: rqjs.getAttribute('src').replace('require.js',''),
 	paths: {
 		mmenu: 'mmenu-light',
+		splide: 'splide.min',
 	}
 });
 if (typeof jQuery === 'function') define('jQuery', function () {
