@@ -1,4 +1,80 @@
+.contentstyle{
+	// h1,h2,h3,h4,h5,h6{}
+	h1{font-size:200%;}
+	h2{font-size:150%;}
+	h3{font-size:100%;}
+	h4{font-size:95%;}
+	h5{font-size:85%;}
+	h6{font-size:75%;}
+	blockquote{
+		font-size: 18px;
+		line-height: 35px;
+		position: relative;
+		text-align: justify;
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background-color: $box-background;
+		border-right: 5px solid map-get($colors, 'secondary');
+		> p{
+			display:inline-block;
+			clear: both;
+			&:before{
+				content: '”';
+			}
+			&:after{
+				content: '‟';
+			}
+		}
+		cite{
+			display: block;
+			font-size: 15px;
+			font-style: normal;
+			line-height: 35px;
+			text-align: left;
+		}
+	}
+	a{
+		color: inherit;
+		text-decoration: underline;
+		transition: color 0.3s linear;
+		&:hover{color: map-get($colors, 'primary');}
+	}
+	ul{
+		padding: 0;
+		line-height: 30px;
+		margin: 1rem auto;
+		list-style: none;
+		> li{
+			position: relative;
+			padding-right: 1.5rem;
+			&:before{
+				top: 50%;
+				right: 0px;
+				content: '';
+				width: 6px;
+				height: 6px;
+				position: absolute;
+				border-radius: 50%;
+				transform: translateY(-50%);
+				background-color: map-get($colors, 'secondary');
+			}
+		}
+	}
+	img{
+		&.alignleft{float:left;margin:0 1rem 1rem 0}
+		&.alignright{float:right;margin:0 0 1rem 1rem}
+		&.aligncenter{display:block;margin-left:auto;margin-right:auto}
+	}
+	> *:last-child{margin-bottom:0;}
+}
 
+.pagination{
+	.page-numbers{
+		&.dots{pointer-events:none;}
+		&.current,&:hover{}
+		&.current{}
+	}
+}
 
 //ContactForm 7
 .wpcf7{
@@ -6,16 +82,29 @@
 		.wpcf7-response-output{
 			margin:0;
 			padding: 0.5rem 1rem;
-			border: 2px solid #00a0d2;
 		}
 		&.init .wpcf7-response-output{display:none;}
-		&.sent .wpcf7-response-output{background-color:map-get($colors, 'success');}
+		&.sent .wpcf7-response-output{
+			color: map-get($colors, 'success');
+			background-color: rgba(map-get($colors, 'success'), 0.15);
+		}
 		&.failed,&.abroted{
-			.wpcf7-response-output{background-color:map-get($colors, 'danger');}
+			.wpcf7-response-output{
+				color: map-get($colors, 'danger');
+				background-color: rgba(map-get($colors, 'danger'), 0.15);
+			}
 		}
 		&.unaccepted,&.invalid,&.spam{
-			.wpcf7-response-output{background-color:map-get($colors, 'danger');}
+			color: map-get($colors, 'warning');
+			background-color: rgba(map-get($colors, 'warning'), 0.15);
 		}
+	}
+	.wpcf7-spinner{
+		width: 42px;
+		height: 42px;
+		position: absolute;
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'%3E%3Ccircle cx='50' cy='50' fill='none' stroke='black' stroke-width='7' r='35' stroke-dasharray='164.93361431346415 56.97787143782138'%3E%3CanimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='1s' values='0 50 50;360 50 50' keyTimes='0;1'%3E%3C/animateTransform%3E%3C/circle%3E%3C/svg%3E");
+		background: currentColor no-repeat center center;
 	}
 	.wpcf7-not-valid-tip {
 		display: block;

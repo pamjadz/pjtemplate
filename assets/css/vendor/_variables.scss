@@ -1,11 +1,12 @@
 $gutter: 1.5rem;
 $direction: rtl;
+$multilang: false;
 $text-body: #212529;
-$text-muted: #495057;
+$text-muted: #6c757d;
 $border-radius: 0.25rem;
 $border-color: #ced4da;
 $box-background: #fff;
-$background-color: #eee;
+$background-color: #f8f9fa;
 $colors :(
 	"primary": #007bff,
 	"secondary": #6c757d,
@@ -13,7 +14,9 @@ $colors :(
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
+	"border": $border-color,
 );
+$breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px);
 
 @function colorLevel($hex, $level){
 	$colorbase: if($level > 0, black, white);

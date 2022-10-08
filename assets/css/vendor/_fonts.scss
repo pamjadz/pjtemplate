@@ -22,23 +22,3 @@
 	font-display:swap;
 	src:url(../font/iransans/bold.woff2) format("woff2");
 }
-@font-face {
-	font-family: 'gmticon';
-	font-style: normal;
-	src: url(../font/materialicons.woff2) format('woff2');
-}
-.mticon{
-	font-size: 20px;
-	font-family: 'gmticon' !important;
-	speak: never;
-	direction: ltr;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	white-space: nowrap;
-	-moz-font-feature-settings: 'liga';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}

@@ -1,0 +1,15 @@
+.posts{}
+.post{}
+
+#sidebar{
+	.widget{
+		.widget-title{}
+
+		//Wordpress Widgets Classes
+		&.widget_search{}
+		&.widget_categories{}
+		&.widget_archive{}
+		&.widget_recent_entries{}
+		&.widget_tag_cloud{}
+	}
+}

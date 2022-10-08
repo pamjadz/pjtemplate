@@ -14,44 +14,39 @@
 		top: 0;
 		#{if($direction == rtl, right, left)}: 0;
 		width: 400px;
-		transform: translateX(#{if($direction == rtl, 100%, -100%)});
+		transform: translateX( #{if($direction == rtl, 100%, -100%)} );
 	}
 	&.offcanvas-end{
+		top: 0;
 		#{if($direction == rtl, left, right)}: 0;
 		width: 400px;
-		transform: translateX(#{if($direction == rtl, -100%, 100%)});
+		transform: translateX( #{if($direction == rtl, -100%, 100%)} );
+	}
+	&.offcanvas-top,&.offcanvas-bottom{
+		left: 0;
+		right: 0;
+		height: 30vh;
+		max-height: 100%;
 	}
 	&.offcanvas-top{
 		top: 0;
-		right: 0;
-		left: 0;
-		height: 30vh;
-		max-height: 100%;
 		transform: translateY(-100%);
 	}
 	&.offcanvas-bottom{
-		left: 0;
-		right: 0;
-		height: 30vh;
-		max-height: 100%;
 		transform: translateY(100%);
 	}
-	&.show{transform: none;}
+	&.show{transform:none;}
 	.offcanvas-header{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 1rem 1rem;
-		.btn-close {
+		.btn-close{
 			padding: 0.5rem 0.5rem;
 			margin-top: -0.5rem;
 			margin-right: -0.5rem;
 			margin-bottom: -0.5rem;
 		}
-	}
-	.offcanvas-title {
-		margin-bottom: 0;
-		line-height: 1.5;
 	}
 	.offcanvas-body{
 		flex-grow: 1;
@@ -60,18 +55,20 @@
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.offcanvas {transition: none;}
-}
-
-.offcanvas-backdrop {
-	position: fixed;
+.offcanvas-backdrop{
 	top: 0;
 	left: 0;
 	z-index: 1040;
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	background-color: #000;
 	&.fade{opacity: 0;}
 	&.show{opacity: 0.5;}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	.offcanvas{transition: none;}
+}
+
+//TODO: Multilang

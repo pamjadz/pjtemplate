@@ -5,14 +5,10 @@
 body{
 	color: $text-body;
 	direction: $direction;
-	font-size: 13px;
-	font-weight: 400;
-	font-family: iransans, Tahoma;
 	background-color: $background-color;
 }
 @import 'layouts/header';
 @import 'layouts/elements';
-@import 'layouts/singles';
 @import 'layouts/aside';
 @import 'layouts/footer';
 @import 'responsive';

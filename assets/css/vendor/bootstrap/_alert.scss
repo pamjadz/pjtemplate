@@ -1,22 +1,27 @@
 @mixin alert-color($color) {
 	color:$color;
 	border-color:$color;
-	background-color:colorLevel($color, -85);
-	.alert-link,a{color:darken($color,5%)}
+	background-color:rgba($color,0.08);
+	.alert-link,a{text-decoration:underline;}
 }
 
 .alert{
 	color: #a1a1a1;
-	padding: 1rem;
+	padding: 0.75rem 1rem;
 	position: relative;
 	margin-bottom: 1rem;
-	border-radius: 8px;
-	border-#{if($direction == rtl, right, left)}: 8px solid #a1a1a1;
+	border-radius: 0.25rem;
 	&.alert-dismissible{
-		padding-#{if($direction == rtl, left, right)}: 3rem;
-		.btn-close{position:absolute;top:0;#{if($direction == rtl, left, right)}:0;padding: 1.25rem 1rem}
+		padding-inline-end: 3rem;
+		.btn-close{
+			position:absolute;
+			top:0.75rem;
+			#{if($direction == rtl, left, right)}:1rem;
+		}
 	}
 	@each $name,$hex in $colors {
-		&.alert-#{$name}{@include alert-color($hex);}
+		&.alert-#{$name}{
+			@include alert-color($hex);
+		}
 	}
 }

@@ -1,36 +1,28 @@
-.table {
+.table{
 	width: 100%;
+	margin: 0;
 	color: $text-body;
-	margin-bottom: 1rem;
 	vertical-align: middle;
 	border-color: $border-color;
-	&.caption-top {caption-side: top;}
-	> :not(caption) > * > * {
-		padding: 0.5rem 0.5rem;
-		border-bottom-width: 1px;
-	}
-	> tbody {vertical-align: middle;}
-	> thead {vertical-align: middle;}
-	> :not(:last-child) > :last-child > * {border-bottom-color: currentColor;}
+	&.caption-top{caption-side:top;}
+	> thead, > tbody, > tfoot,th, td{vertical-align: middle;}
 	th, td {
 		padding: 0.75rem;
-		vertical-align: top;
-		border-top: 1px solid #dee2e6;
+		border-top: 1px solid $border-color;
 	}
-	thead th {
-		vertical-align: bottom;
-		border-bottom: 2px solid #dee2e6;
+	tbody{
+		tr:last-child{
+			th,td{border-bottom: none;}
+		}
 	}
-	tbody + tbody {
-		border-top: 2px solid #dee2e6;
-	}
-	&.table-bordered {
+	thead th,thead td {border-bottom-width:2px;}
+	&.table-bordered{
 		border: 1px solid $border-color;
 		th, td {border: 1px solid $border-color;}
 		thead th,thead td {border-bottom-width:2px;}
 	}
 	&.table-borderless{
-		tbody + tbody, td, th , thead th{border:0;}
+		tbody + tbody, td, th, thead th{border:0;}
 	}
 	&.table-striped tbody tr:nth-of-type(odd) {background-color: rgba(black, 0.05);}
 	&.table-hover tbody tr:hover {background-color: rgba(black, 0.075);}
@@ -39,51 +31,10 @@
 	}
 }
 
-.table-responsive {
-	display: block;
+.table-responsive{
 	width: 100%;
+	display: block;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	> .table-bordered {border:0;}
-}
-@media (max-width: 575.98px) {
-	.table-responsive-sm {
-		width: 100%;
-		display: block;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		> .table-bordered {border:0;}
-	}
-}
-@media (max-width: 767.98px) {
-	.table-responsive-md {
-		width: 100%;
-		display: block;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		> .table-bordered {border:0;}
-	}
-}
-@media (max-width: 991.98px) {
-	.table-responsive-lg {
-		width: 100%;
-		display: block;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		> .table-bordered {border:0;}
-	}
-}	
-@media (max-width: 1199.98px) {
-	.table-responsive-xl {
-		width: 100%;
-		display: block;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		> .table-bordered {border:0;}
-	}
 }
