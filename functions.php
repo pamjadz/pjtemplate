@@ -1,6 +1,7 @@
 <?php
 
 defined( 'ABSPATH' ) || exit;
+//TODO: Renmate txtdmn
 define( 'txtdmn', 'txtdmn' );
 define( 'THEMEDIR', trailingslashit(get_template_directory()) );
 define( 'THEMEURL', trailingslashit(get_template_directory_uri()) );

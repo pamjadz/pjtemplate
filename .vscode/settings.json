@@ -16,5 +16,6 @@
 	   "> 1%",
 	   "last 2 versions"
 	],
+   "liveSassCompile.settings.showOutputWindowOn": "Error",
 	"liveServer.settings.port": 5500
 }
