@@ -1,26 +1,18 @@
-//TODO: Optimize Buttons
-
 @mixin btn-color($background, $text: #fff) {
 	color: $text;
 	background-color:$background;
-	&:hover{background-color: colorLevel($background,7);box-shadow:0 3px 5px rgba($background, 0.5);}
-	&:focus,&.focus{box-shadow: 0 0 0 0.2rem rgba($background, 0.5);}
-	&:not(:disabled):not(.disabled):active,&:not(:disabled):not(.disabled).active{background-color:colorLevel($background,7);border-color:colorLevel($background,10)}
-	&:not(:disabled):not(.disabled):active:focus,&:not(:disabled):not(.disabled).active:focus{box-shadow:0px 6px 10px rgba($background,0.5)}
+	&:hover{box-shadow:0 3px 5px rgba($background, 0.5);}
+	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba($background,0.5)}
 }
 @mixin btn-outline-color($background, $text: #fff) {
-	color:$background!important;;
+	color:$background;
 	border-color:$background;
 	&:hover{color:$text!important;background-color:$background;box-shadow:0 3px 5px rgba($background, 0.5);}
-	&:focus,&.focus{box-shadow:0 0 0 0.2rem rgba($background, 0.5);}
-	&.disabled,&:disabled {opacity:0.5;pointer-events:none;}
-	&:not(:disabled):not(.disabled):active,&:not(:disabled):not(.disabled).active {color:$text;background-color:$background;border-color:$background}
-	&:not(:disabled):not(.disabled):active:focus,
-	&:not(:disabled):not(.disabled).active:focus {box-shadow: 0 0 0 0.2rem rgba($background, 0.5);}
+	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba($background,0.5)}
 }
-
 .btn{
 	z-index: 1;
+	outline: none !important;
 	cursor: pointer;
 	font-size: inherit;
 	font-weight: 400;
@@ -38,11 +30,9 @@
 	background-color: transparent;
 	border: 1px solid transparent;
 	transition: all 0.15s ease-in-out;
-	&:hover, &:focus{text-decoration:none;}
-	&:focus, &.focus{outline:0;box-shadow:0px 6px 10px rgba(map-get($colors, primary), 0.25);}
-	&.disabled, &:disabled {opacity:0.65;}
-	&:not(:disabled):not(.disabled) {cursor:pointer;}
-	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {background-image:none;}
+	&.disabled, &:disabled{opacity:0.65;}
+	&:not(:disabled):not(.disabled){cursor:pointer;}
+	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active{background-image:none;}
 	&.btn-icon{
 		display: inline-flex;
 		align-items: center;
@@ -84,6 +74,20 @@
 				@include btn-outline-color($hex);
 			}
 		}
+	}
+	&.btn-custom{
+		--base: 0,0,0;
+		color: var(--text, white);
+		background-color: rgb(var(--base));
+		&:hover{box-shadow:0 3px 5px rgba(var(--base), 0.5);}
+		&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba(var(--base),0.5)}
+	}
+	&.btn-outline-custom{
+		--base: 0,0,0;
+		color:rgb(var(--base));
+		border-color:rgb(var(--base));
+		&:hover{color:var(--txtcolor, white);background-color:rgb(var(--base));box-shadow:0 3px 5px rgba(var(--base), 0.5);}
+		&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba(var(--base),0.5)}
 	}
 }
 

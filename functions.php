@@ -1,6 +1,6 @@
 <?php
-
 defined( 'ABSPATH' ) || exit;
+
 //TODO: Renmate txtdmn
 define( 'txtdmn', 'txtdmn' );
 define( 'THEMEDIR', trailingslashit(get_template_directory()) );
@@ -22,19 +22,19 @@ add_action( 'after_setup_theme', function(){
 	}, 9999);
 
 	add_filter('body_class', function($classes) {
-		$classes = array();
-		if( is_admin_bar_showing() ) $classes[] ='admin_bar';
+		$classes = [];
+		if( is_admin_bar_showing() ) $classes[] = 'admin_bar';
 		if( is_404() ) $classes[] = 'error404';
 		$classes[] = ( is_rtl() ) ? 'rtl' : 'ltr';
 		return $classes;
 	}, 1000);
 
-	add_theme_support( 'custom-logo' , array(
+	add_theme_support( 'custom-logo', [
 		// 'height'      => ,
 		// 'width'       => ,
 		'flex-height' => true,
 		'flex-width'  => true
-	));
+	]);
 
 	register_nav_menus([
 		'primary'		=> __('Main Menu',txtdmn),
@@ -44,11 +44,11 @@ add_action( 'after_setup_theme', function(){
 	add_action('widgets_init', function() {
 		register_sidebar([
 			'id'			=> 'sidebar',
-			'name'			=>  __('Sidebar'),
+			'name'			=> __('Sidebar'),
 			'before_widget'	=> '<section id="%1$s" class="widget %2$s">',
 			'after_widget'	=> '</section>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		]);
 	});
 
@@ -57,5 +57,6 @@ add_action( 'after_setup_theme', function(){
 	update_option('medium_size_w', 400);
 	update_option('medium_size_h', 300);
 
+	//includes
 	foreach (glob(THEMEDIR.'inc/*.php') as $file) require_once $file;
 });
