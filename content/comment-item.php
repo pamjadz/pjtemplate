@@ -1,4 +1,17 @@
-<?php extract($args); ?>
+<?php 
+/**
+ * The template for displaying comment item
+ *
+ * @see 	https://developer.wordpress.org/reference/classes/wp_comment/
+ * @author 	Pouriya Amjadzadeh
+ * @version 3.0.0
+ */
+
+defined('ABSPATH') || exit;
+
+extract($args);
+?>
+
 <li <?php comment_class($args['has_children'] ? 'no_child' :'has_children') ?> id="comment-<?php comment_ID() ?>" itemscope itemtype="http://schema.org/Comment">
 	<div class="commnetbody<?php if( get_option( 'show_avatars' ) ) echo ' show-avatar'; ?>">
 		<?php if( get_option( 'show_avatars' ) ) echo get_avatar($comment, 60, '', get_comment_author()); ?>
