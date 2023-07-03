@@ -1,27 +1,24 @@
-@mixin alert-color($color) {
-	color:$color;
-	border-color:$color;
-	background-color:rgba($color,0.08);
-	.alert-link,a{text-decoration:underline;}
-}
-
 .alert{
-	color: #a1a1a1;
+	--alert-color: #{$text-muted};
+	--alert-background: #{rgba(black,0.07)};
+	color: var(--alert-color);
 	padding: 0.75rem 1rem;
 	position: relative;
 	margin-bottom: 1rem;
-	border-radius: 0.25rem;
+	border-radius: $border-radius;
+	background-color: var(--alert-background);
 	&.alert-dismissible{
 		padding-inline-end: 3rem;
 		.btn-close{
+			top:1rem;
 			position:absolute;
-			top:0.75rem;
-			#{if($direction == rtl, left, right)}:1rem;
+			inset-inline-end: 1rem;
 		}
 	}
 	@each $name,$hex in $colors {
 		&.alert-#{$name}{
-			@include alert-color($hex);
+			--alert-color: var(--#{$name}-color);
+			--alert-background: #{rgba(var(--#{$name}-color-rgb), .07)};
 		}
 	}
 }

@@ -15,7 +15,12 @@ hr{
 	background-color:currentColor;
 	&:not([size]){height:1px}
 }
-h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;line-height:1.2}
+h1,h2,h3,h4,h5,h6{
+	margin-top:0;
+	margin-bottom:.5rem;
+	line-height:1.2;
+	@include fw(700);
+}
 p{
 	margin-top:0;
 	margin-bottom:1rem;
@@ -96,6 +101,5 @@ progress{vertical-align:baseline}
 @import 'bootstrap/alert';
 @import 'bootstrap/offcanvas';
 @import 'bootstrap/modal';
-@import 'bootstrap/tooltip';
 @import 'bootstrap/loaders';
 @import 'bootstrap/utilities';

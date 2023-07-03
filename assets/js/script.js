@@ -1,12 +1,5 @@
 var themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.ajax;
 
-if( typeof bootstrap !== 'undefined' ){
-	const tooltipList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-	for ( var i = 0; i < tooltipList.length; i++ ) {
-		new bootstrap.Tooltip(tooltipList[i]);
-	}
-}
-
 if( typeof Splide !== 'undefined' && document.getElementsByClassName('splide') ){
 	const splides = document.getElementsByClassName('splide');
 	for ( var i = 0; i < splides.length; i++ ) {

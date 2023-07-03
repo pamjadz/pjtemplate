@@ -1,19 +1,17 @@
 .container,.container-fluid{
-	--gutter: #{$gutter};
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: calc(var(--gutter) * 0.5);
 	padding-right: calc(var(--gutter) * 0.5);
 }
-.container{max-width: 1440px;}
+.container{max-width:var(--container);}
 
-@media (min-width: 768px) and (max-width:1440px){
-	.container{padding-right:calc(var(--gutter) * 2);;padding-left:calc(var(--gutter) * 2);}
+@media (min-width: 768px) and (max-width:1140px){
+	.container{padding-right:var(--gutter);padding-left:var(--gutter);}
 }
 
 .row{
-	--gutter: #{$gutter};
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: calc(-0.5 * var(--gutter));

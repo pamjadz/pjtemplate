@@ -19,10 +19,10 @@ add_action( 'after_setup_theme', function(){
 	load_theme_textdomain( txtdmn, get_template_directory() . '/langs' );
 
 	add_theme_support( 'custom-logo', [
-		// 'height'      => ,
-		// 'width'       => ,
-		'flex-height' => true,
-		'flex-width'  => true
+		// 'width'			=> ,
+		// 'height'		=> ,
+		'flex-height'	=> true,
+		'flex-width'	=> true
 	]);
 
 	register_nav_menus([
@@ -46,29 +46,31 @@ add_action( 'after_setup_theme', function(){
 	update_option('medium_size_w', 400);
 	update_option('medium_size_h', 300);
 
-	//FrontEnd
-	add_action('wp_enqueue_scripts', function(){
-		wp_enqueue_style( 'bootstrap', THEMEURL.'assets/css/bootstrap.css');
-		wp_enqueue_style( 'stylesheet', THEMEURL.'assets/css/stylesheet.css');
+	//Enqueue scripts
+	add_action( 'wp_enqueue_scripts', function() {
+		wp_enqueue_style( 'bootstrap', THEMEURL.'assets/css/bootstrap.css' );
+		wp_enqueue_script( 'bootstrap', THEMEURL.'assets/js/vendor/bootstrap.js', [], '5.1.2', true );
+
+		wp_enqueue_style( 'stylesheet', THEMEURL.'assets/css/stylesheet.css' );
 
 		if( !is_admin() ) {
-			wp_deregister_script( 'jquery');
-			wp_enqueue_script('jquery', THEMEURL.'assets/js/vendor/jquery.min.js', [], false);
+			wp_deregister_script( 'jquery' );
+			wp_enqueue_script( 'jquery', THEMEURL.'assets/js/vendor/jquery.min.js', [], '', false );
 		}
 
-		wp_enqueue_script('bootstrap', THEMEURL.'assets/js/vendor/bootstrap.js', [], '5.1.2', true);
-		wp_enqueue_script('splide', THEMEURL.'assets/js/vendor/splide.min.js', [], '4.1.3', true);
+		wp_enqueue_script( 'splide', THEMEURL.'assets/js/vendor/splide.min.js', [], '4.1.3', true );
 
 		if ( comments_open() ) wp_enqueue_script('comment-reply');
-	}, 9999);
 
-	add_filter('body_class', function($classes) {
+	}, 999 );
+
+	add_filter( 'body_class', function($classes) {
 		$classes = [];
-		if( is_admin_bar_showing() ) $classes[] = 'admin_bar';
 		if( is_404() ) $classes[] = 'error404';
 		$classes[] = ( is_rtl() ) ? 'rtl' : 'ltr';
+		if( is_admin_bar_showing() ) $classes[] = 'admin_bar';
 		return $classes;
-	}, 1000);
+	}, 999 );
 
 	add_filter('header_class', function( $class ){
 		$class = 'default-class';

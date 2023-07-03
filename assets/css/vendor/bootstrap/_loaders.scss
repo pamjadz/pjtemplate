@@ -28,16 +28,14 @@
 	background-color: currentColor;
 	animation: 0.75s linear infinite spinner-grow;
 }
-.skeleton{
+.skeleton > * , .skeleton-self{
 	cursor: wait;
-	> * {
-		opacity: .5;
-		min-height: var(--height, 1em);
-		color: transparent;
-		user-select: none;
-		background-color: $border-color;
-		animation: placeholder-glow 2s ease-in-out infinite;
-	}
+	opacity: .5;
+	min-height: var(--skeleton-height, 1em);
+	color: transparent;
+	user-select: none;
+	background-color: $border-color;
+	animation: placeholder-glow 2s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

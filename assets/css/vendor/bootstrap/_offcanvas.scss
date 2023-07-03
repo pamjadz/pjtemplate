@@ -12,15 +12,15 @@
 	transition: transform 0.3s ease-in-out;
 	&.offcanvas-start{
 		top: 0;
-		#{if($direction == rtl, right, left)}: 0;
+		inset-inline-start: 0;
 		width: 400px;
-		transform: translateX( #{if($direction == rtl, 100%, -100%)} );
+		transform: translateX(-100%);
 	}
 	&.offcanvas-end{
 		top: 0;
-		#{if($direction == rtl, left, right)}: 0;
+		inset-inline-end: 0;
 		width: 400px;
-		transform: translateX( #{if($direction == rtl, -100%, 100%)} );
+		transform: translateX(100%);
 	}
 	&.offcanvas-top,&.offcanvas-bottom{
 		left: 0;
@@ -28,21 +28,22 @@
 		height: 30vh;
 		max-height: 100%;
 	}
-	&.offcanvas-top{
-		top: 0;
-		transform: translateY(-100%);
-	}
-	&.offcanvas-bottom{
-		transform: translateY(100%);
-	}
-	&.show{transform:none;}
+	&.offcanvas-top{top: 0;transform: translateY(-100%);}
+	&.offcanvas-bottom{transform: translateY(100%);}
+
+	&.showing, &.show:not(.hiding) {transform: none !important;}
+	&.showing, &.hiding, &.show {visibility: visible !important;}
+
 	.offcanvas-header{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 1rem 1rem;
+		.offcanvas-title{
+			margin: 0;
+			font-size: 18px;
+		}
 		.btn-close{
-			padding: 0.5rem 0.5rem;
 			margin-top: -0.5rem;
 			margin-right: -0.5rem;
 			margin-bottom: -0.5rem;
@@ -55,14 +56,23 @@
 	}
 }
 
+[dir="rtl"] .offcanvas{
+	&.offcanvas-start{
+		transform: translateX(100%);
+	}
+	&.offcanvas-end{
+		transform: translateX(-100%);
+	}
+}
+
 .offcanvas-backdrop{
 	top: 0;
 	left: 0;
-	z-index: 1040;
-	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background-color: #000;
+	z-index: 1040;
+	position: fixed;
+	background-color: var(--backdrop-bg, #000);
 	&.fade{opacity: 0;}
 	&.show{opacity: 0.5;}
 }
@@ -70,5 +80,3 @@
 @media (prefers-reduced-motion: reduce) {
 	.offcanvas{transition: none;}
 }
-
-//TODO: Multilang

@@ -1,111 +1,107 @@
-@mixin btn-color($background, $text: #fff) {
-	color: $text;
-	background-color:$background;
-	&:hover{box-shadow:0 3px 5px rgba($background, 0.5);}
-	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba($background,0.5)}
-}
-@mixin btn-outline-color($background, $text: #fff) {
-	color:$background;
-	border-color:$background;
-	&:hover{color:$text!important;background-color:$background;box-shadow:0 3px 5px rgba($background, 0.5);}
-	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba($background,0.5)}
-}
 .btn{
+	--btn-text: inherit;
+	--btn-color: transparent;
+	--btn-shadow: transparent;
+	--btn-py: .55rem;
+	--btn-px: 1rem;
+	--btn-border-radius: $border-radius;
 	z-index: 1;
 	outline: none !important;
 	cursor: pointer;
-	font-size: inherit;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-	color: inherit;
+	color: var(--btn-text);
 	user-select: none;
 	text-align: center;
 	align-items: center;
-	border-radius: $border-radius;
+	border-radius: var(--btn-border-radius);
 	display: inline-block;
 	text-decoration: none;
 	vertical-align: middle;
-	padding: 0.375rem 0.75rem;
+	padding: var(--btn-py) var(--btn-px);
 	background-image: none;
-	background-color: transparent;
+	background-color: var(--btn-color);
 	border: 1px solid transparent;
 	transition: all 0.15s ease-in-out;
 	&.disabled, &:disabled{opacity:0.65;}
 	&:not(:disabled):not(.disabled){cursor:pointer;}
 	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active{background-image:none;}
+	&:hover{box-shadow:0 3px 5px var(--btn-shadow);}
+	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px var(--btn-shadow)}
 	&.btn-icon{
+		gap: calc( var(--btn-px) * 0.5 );
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
 	}
 	&.btn-block{
 		width:100%;
 		display:block;
 		&.btn-icon{display:flex;}
 	}
+	&.btn-rounded{border-radius:30px;}
 	&.btn-link{
 		color: inherit;
-		&:hover{
-			color: map-get($colors,'primary');
+		&:hover{color: var(--primary-color) !important;}
+		&:focus,&:hover {
 			text-decoration: underline;
-		}
-		&:focus,&.focus {
-			text-decoration: underline;
-			border-color: transparent;
 			box-shadow: none;
 		}
-		&:disabled,&.disabled {color: #6c757d;}
+		&:disabled{color: #6c757d;}
 	}
+
+	&.btn-sm{
+		--btn-py: .375rem;
+		--btn-px: 75rem;
+		font-size: 14px;
+	}
+
+	&.btn-lg{
+		--btn-py: .75rem;
+		--btn-px: 2rem;
+		font-size: 18px;
+	}
+
+	&.btn-outline{
+		--btn-text: white;
+		--btn-color: currentColor;
+		color: var(--btn-color);
+		background-color: transparent;
+		border-color: var(--btn-color);
+		&:hover{
+			color: var(--btn-text);
+			background-color: var(--btn-color);
+		}
+	}
+
 	@each $name,$hex in $colors {
-		&.btn-#{$name}{
-			@if $name == 'dark'{
-				@include btn-color($hex, map-get($colors,'light'));
-			} @else if $name == 'light' {
-				@include btn-color($hex, map-get($colors,'dark'));
-			} @else {
-				@include btn-color($hex);
-			}
+		&.btn-#{$name} {
+			--btn-text: white;
+			--btn-color: var(--#{$name}-color);
+			--btn-shadow: #{rgba(var(--#{$name}-color-rgb), 0.5)};
 		}
-		&.btn-outline-#{$name}{
-			@if $name == 'dark'{
-				@include btn-outline-color($hex, map-get($colors,'light'));
-			} @else if $name == 'light' {
-				@include btn-outline-color($hex, map-get($colors,'dark'));
-			} @else {
-				@include btn-outline-color($hex);
-			}
-		}
-	}
-	&.btn-custom{
-		--base: 0,0,0;
-		color: var(--text, white);
-		background-color: rgb(var(--base));
-		&:hover{box-shadow:0 3px 5px rgba(var(--base), 0.5);}
-		&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba(var(--base),0.5)}
-	}
-	&.btn-outline-custom{
-		--base: 0,0,0;
-		color:rgb(var(--base));
-		border-color:rgb(var(--base));
-		&:hover{color:var(--txtcolor, white);background-color:rgb(var(--base));box-shadow:0 3px 5px rgba(var(--base), 0.5);}
-		&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px rgba(var(--base),0.5)}
 	}
 }
 
 .btn-close{
-	width: 1em;
-	height: 1em;
+	width: 0.5rem;
+	height: 0.5rem;
 	border: 0;
-	opacity: 0.5;
+	opacity: 1;
+	color: currentColor;
 	outline: none !important;
 	padding: 0.25em 0.25em;
 	box-sizing: content-box;
-	color: currentColor;
 	border-radius: 0.25rem;
 	text-decoration: none;
 	box-shadow: none;
-	background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+	mask-repeat: no-repeat;
+	mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+	mask-position: center center;
+	background-color: currentColor;
 	&:hover{opacity: 0.75;}
-	&:focus {opacity: 1;}
+	&:focus {opacity: 0.5;}
 	&:disabled, &.disabled {
 		opacity: 0.25;
 		user-select: none;

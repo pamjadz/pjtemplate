@@ -1,14 +1,19 @@
 .table{
+	--table-border-color: #{$border-color};
+	--table-column-padding: 0.75rem;
+	--table-striped-color: #{rgba(black,0.1)};
+	--table-hover-color: #{rgba(black,0.1)};
 	width: 100%;
 	margin: 0;
 	color: $text-body;
 	vertical-align: middle;
-	border-color: $border-color;
+	border-color: var(--table-border-color);
 	&.caption-top{caption-side:top;}
 	> thead, > tbody, > tfoot,th, td{vertical-align: middle;}
-	th, td {
-		padding: 0.75rem;
-		border-top: 1px solid $border-color;
+	th, td{
+		padding: var(--table-column-padding);
+		border-top: 1px solid var(--table-border-color);
+		background-color: var(--table-column-background, transparent);
 	}
 	tbody{
 		tr:last-child{
@@ -17,18 +22,16 @@
 	}
 	thead th,thead td {border-bottom-width:2px;}
 	&.table-bordered{
-		border: 1px solid $border-color;
-		th, td {border: 1px solid $border-color;}
+		border: 1px solid var(--table-border-color);;
+		th, td {border: 1px solid var(--table-border-color);;}
 		thead th,thead td {border-bottom-width:2px;}
 	}
 	&.table-borderless{
 		tbody + tbody, td, th, thead th{border:0;}
 	}
-	&.table-striped tbody tr:nth-of-type(odd) {background-color: rgba(black, 0.05);}
-	&.table-hover tbody tr:hover {background-color: rgba(black, 0.075);}
-	&.table-sm{
-		th,td{padding: 0.3rem;}
-	}
+	&.table-striped tbody tr:nth-of-type(odd) {background-color:var(--table-striped-color);}
+	&.table-hover tbody tr:hover {background-color: var(--table-hover-color);}
+	&.table-sm{--table-column-padding: 0.325rem;}
 }
 
 .table-responsive{

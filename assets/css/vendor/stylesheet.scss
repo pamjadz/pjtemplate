@@ -1,15 +1,37 @@
 @charset "UTF-8";
 @import 'variables';
+@import 'plugins';
 ::selection{color:#fff;background-color:lighten(map-get($colors, primary), 10%);}
+:root{
+	--gutter: #{$gutter};
+	--container: #{$container};
+	@each $name,$hex in $colors {
+		--#{$name}-color: #{$hex};
+		--#{$name}-color-rgb: #{RGB_Values($hex)};
+	}
+	// --bg-card: 
+	// --bg-back: 
+	// --border-color: 
+	// --border-radius: 
+	// --text-body: 
+	// --text-muted: 
+	--form-control-radius: #{$border-radius};
+	--form-control-border-width: 1px;
+	--form-control-border-color: #{$border-color};
+	--form-control-bg: #{$box-background};
+	--btn-border-radius: #{$border-radius};
+	--backdrop-bg: black;
+}
 
 @import 'fonts';
+
 body{
 	color: $text-body;
 	direction: $direction;
 	background-color: $background-color;
 }
+@import 'layouts/atoms';
 @import 'layouts/header';
-@import 'layouts/elements';
+//Other Layouts
 @import 'layouts/footer';
 @import 'responsive';
-@import 'plugins';

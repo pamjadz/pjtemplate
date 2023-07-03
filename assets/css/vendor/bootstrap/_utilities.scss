@@ -14,6 +14,8 @@
 
 .w-100{width:100%;}
 .h-100{height:100%;}
+.gap-10{gap:1rem}
+.gap-05{gap:0.5rem}
 .clearfix::after{display:block;clear:both;content:''}
 .position-static{position:static!important}
 .position-relative{position:relative!important;z-index:1;}
@@ -184,7 +186,7 @@
 }
 
 @each $name,$hex in $colors {
-	.text-#{$name}{color:$hex!important;}
+	.text-#{$name}{color:var(--#{$name}-color)!important;}
 }
 .text-body{color:$text-body!important}
 .text-muted{color:$text-muted!important}
@@ -193,7 +195,7 @@
 .text-nowrap,.nobr{white-space:nowrap}
 
 @each $name,$hex in $colors{
-	.bg-#{$name}{background-color:$hex!important;}
+	.bg-#{$name}{background-color:var(--#{$name}-color)!important;}
 }
 .bg-box{background-color:$box-background!important}
 .bg-body{background-color:$background-color!important}
