@@ -7,7 +7,7 @@
  * @package https://arvandec.com
  */
 
- defined('ABSPATH') || exit;
+defined('ABSPATH') || exit;
 
 //TODO: Renmate txtdmn
 define( 'txtdmn', 'txtdmn' );

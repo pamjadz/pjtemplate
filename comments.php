@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if( ! comments_open() ) return;
+if( ! comments_open() || post_password_required() ) return;
 ?>
 
 <div id="comments">
