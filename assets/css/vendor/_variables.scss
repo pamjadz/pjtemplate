@@ -18,19 +18,26 @@ $colors:(
 );
 $breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px);
 
-@function shade($color, $percentage) {
-	$hsl: hsl($color);
-	$hue: nth($hsl, 1);
-	$saturation: nth($hsl, 2);
-	$lightness: nth($hsl, 3);
-	$newLightness: $lightness + ($percentage * 0.01);
-	$newColor: hsl($hue, $saturation, $newLightness);
-	@return hex($newColor);
+@function RGB_Values($color) {
+	@return red($color) + ", " + green($color) + ", " + blue($color);
 }
 
-@function RGB_Values($color) {
-    @return red($color) + ", " + green($color) + ", " + blue($color);
+@function bootstrap_shades($base-color, $shade) {
+	$shades: (
+		100: mix(white, $base-color, 80%),
+		200: mix(white, $base-color, 60%),
+		300: mix(white, $base-color, 40%),
+		400: mix(white, $base-color, 20%),
+		600: mix(black, $base-color, 20%),
+		700: mix(black, $base-color, 40%),
+		800: mix(black, $base-color, 60%),
+		900: mix(black, $base-color, 80%),
+	);
+
+	@return map-get($shades, $shade);
 }
+
+
 
 @mixin fw($weight){
 	font-weight: $weight;
