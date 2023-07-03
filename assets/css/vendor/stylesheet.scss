@@ -1,12 +1,17 @@
 @charset "UTF-8";
 @import 'variables';
 @import 'plugins';
-::selection{color:#fff;background-color:lighten(map-get($colors, primary), 10%);}
 :root{
 	--gutter: #{$gutter};
 	--container: #{$container};
 	@each $name,$hex in $colors {
 		--#{$name}-color: #{$hex};
+		@for $i from 1 through 9 {			
+			@if $i != 5 {
+				$shade: $i * 100;
+				--#{$name}-color-#{$shade}: #{bootstrap_shades($hex, $shade)};
+			}
+		}
 		--#{$name}-color-rgb: #{RGB_Values($hex)};
 	}
 	// --bg-card: 
@@ -19,9 +24,11 @@
 	--form-control-border-width: 1px;
 	--form-control-border-color: #{$border-color};
 	--form-control-bg: #{$box-background};
-	--btn-border-radius: #{$border-radius};
+	// --btn-border-radius: #{$border-radius};
 	--backdrop-bg: black;
 }
+
+::selection{color:#fff;background-color:var(--primary-color-300);}
 
 @import 'fonts';
 

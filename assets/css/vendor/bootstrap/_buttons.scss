@@ -4,7 +4,7 @@
 	--btn-shadow: transparent;
 	--btn-py: .55rem;
 	--btn-px: 1rem;
-	--btn-border-radius: $border-radius;
+	--btn-border-radius: #{$border-radius};
 	z-index: 1;
 	outline: none !important;
 	cursor: pointer;
@@ -53,7 +53,7 @@
 
 	&.btn-sm{
 		--btn-py: .375rem;
-		--btn-px: 75rem;
+		--btn-px: .75rem;
 		font-size: 14px;
 	}
 
@@ -79,7 +79,7 @@
 		&.btn-#{$name} {
 			--btn-text: white;
 			--btn-color: var(--#{$name}-color);
-			--btn-shadow: #{rgba(var(--#{$name}-color-rgb), 0.5)};
+			--btn-shadow: rgba( var(--#{$name}-color-rgb), 0.45);
 		}
 	}
 }
