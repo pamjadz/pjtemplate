@@ -14,17 +14,27 @@
 		}
 		--#{$name}-color-rgb: #{RGB_Values($hex)};
 	}
+	
 	// --bg-card: 
 	// --bg-back: 
 	// --border-color: 
 	// --border-radius: 
 	// --text-body: 
 	// --text-muted: 
-	--form-control-radius: #{$border-radius};
+	--form-py: 0.55rem;
+	--form-px: 1rem;
 	--form-control-border-width: 1px;
 	--form-control-border-color: #{$border-color};
 	--form-control-bg: #{$box-background};
-	// --btn-border-radius: #{$border-radius};
+	--btn-border-radius: calc( #{$border-radius} * 0.5 );
+
+	--btn-text: inherit;
+	--btn-color: transparent;
+	--btn-shadow: transparent;
+	--btn-py: .55rem;
+	--btn-px: 1rem;
+	--btn-border-radius: calc( #{$border-radius} * 0.5 );
+
 	--backdrop-bg: black;
 }
 

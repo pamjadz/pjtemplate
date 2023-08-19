@@ -1,6 +1,4 @@
 .form-control{
-	--form-py: 0.55rem;
-	--form-px: 1rem;
 	width: 100%;
 	color: inherit;
 	display: block;
@@ -184,68 +182,9 @@
 	margin-bottom: 0;
 	line-height: 1.5;
 	background-color: transparent;
-	border: 1px solid transparent;
+	border: var(--form-control-border-width) solid transparent;
 	&:focus{outline:0;}
 }
-
-/*
-.form-range {
-	padding: 0;
-	width: 100%;
-	height: 1.5rem;
-	appearance: none;
-	background-color: transparent;
-	&::-moz-focus-outer{border: 0;}
-	&::-webkit-slider-thumb {
-		width: 1rem;
-		height: 1rem;
-		border: 0;
-		margin-top: -0.25rem;
-		background-color: var(--primary-color);
-		border-radius: 1rem;
-		transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-		appearance: none;
-	}
-	&::-moz-range-thumb{
-		width: 1rem;
-		height: 1rem;
-		border: 0;
-		margin-top: -0.25rem;
-		background-color: var(--primary-color);
-		border-radius: 1rem;
-		transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-		appearance: none;
-	}
-	&::-webkit-slider-runnable-track {
-		width: 100%;
-		cursor: pointer;
-		height: 0.5rem;
-		color: transparent;
-		background-color: var(--form-control-border-color);
-		border-color: transparent;
-		border-radius: 1rem;
-	}
-	&::-moz-range-track {
-		width: 100%;
-		cursor: pointer;
-		height: 0.5rem;
-		color: transparent;
-		background-color: var(--form-control-border-color);
-		border-color: transparent;
-		border-radius: 1rem;
-	}
-	&:focus{
-		outline: 0;
-		&::-webkit-slider-thumb{box-shadow: 0 0 0 1px $box-background, 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);}
-		&::-moz-range-thumb{box-shadow: 0 0 0 1px $box-background, 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);}
-	}
-	&:disabled{pointer-events: none;}
-}
-*/
-
-// @media (prefers-reduced-motion: reduce) {
-// 	.form-range::-webkit-slider-thumb {transition: none;}
-// }
 
 .input-group{
 	width:100%;
@@ -288,108 +227,101 @@
 		border-top-right-radius: var(--form-control-radius);
 		border-bottom-right-radius: var(--form-control-radius);
 	}
+}
 
-	@at-root{
-		[dir="rtl"] .input-group{
-			& > *:first-child{
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
-				border-top-right-radius: var(--form-control-radius);
-				border-bottom-right-radius: var(--form-control-radius);
-			}
-			& > *:last-child{
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-				border-top-left-radius: var(--form-control-radius);
-				border-bottom-left-radius: var(--form-control-radius);
-			}
-		}
+[dir="rtl"] .input-group,.input-group[dir="rtl"]{
+	& > *:first-child{
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: var(--form-control-radius);
+		border-bottom-right-radius: var(--form-control-radius);
+	}
+	& > *:last-child{
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border-top-left-radius: var(--form-control-radius);
+		border-bottom-left-radius: var(--form-control-radius);
 	}
 }
 
-
-// @media (prefers-reduced-motion: reduce){
-// 	.form-floating > label,.form-control,.form-control::file-selector-button,.form-control::-webkit-file-upload-button,.form-check-input,.form-range::-webkit-slider-thumb,.form-range::-moz-range-thumb,.form-floating > label{transition:none;}
-// }
-
 .form-floating {
 	position: relative;
-	&::before:not(.form-control:disabled) {
-		content: '';
-		top: 1px;
-		position: absolute;
-		inset-inline-start: 1px;
-		width: calc(100% - (calc(calc(0.375em + 0.1875rem) + calc(0.75em + 0.375rem))));
-		height: 1.875em;
-		background-color: var(--form-control-bg);
-		border-radius: 0.375rem;
+	> .form-control,
+	> .form-control-plaintext{
+		height: calc(3.5rem + 2px);
+		line-height: 1.25;
 	}
+
 	> label {
 		position: absolute;
 		top: 0;
 		inset-inline-start: 0;
 		width: 100%;
 		height: 100%;
-		padding: 1rem 0.75rem;
+		padding: var(--form-py) var(--form-px);
 		overflow: hidden;
 		text-align: start;
+		vertical-align: middle;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		pointer-events: none;
-		border: 1px solid transparent;
+		line-height: 2.5;
+		border: var(--form-control-border-width) solid transparent;
 		transform-origin: 0 0;
 		transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 	}
-	> .form-control{
-		height: calc(3.5rem + 2px);
-		line-height: 1.25;
-		padding: 1rem 0.75rem;
-		&::placeholder{color: transparent;}
-		&:not(:-moz-placeholder-shown){
-			padding-top: 1.625rem;
-			padding-bottom: 0.625rem;
-		}
-		&:not(:placeholder-shown){
-			padding-top: 1.625rem;
+
+	> .form-control, > .form-control-plaintext {
+		padding: var(--form-py) var(--form-px);
+		&::placeholder {color: transparent;}
+		&:focus, &:not(:placeholder-shown) {
+			padding-top: calc(var(--form-py) + .625rem);
 			padding-bottom: 0.625rem;
 		}
 		&:-webkit-autofill {
-			padding-top: 1.625rem;
+			padding-top: calc(var(--form-py) + .625rem);
 			padding-bottom: 0.625rem;
 		}
-		&:focus ~ label, &:not(:placeholder-shown) ~ label{
-			opacity: 0.65;
-			transform: scale(0.85) translate(0.15rem, -0.5rem);
-		}
-		&:-webkit-autofill ~ label {
-			opacity: 0.65;
-			transform: scale(0.85) translate(0.15rem, -0.5rem);
-		}
-		&:disabled ~ label {color: #6c757d;}
 		@at-root{
-			select#{&} ~ label{
-				opacity: 0.65;
-				transform: scale(0.85) translate(0.15rem, -0.5rem);
+			select#{&}{
+				padding-top: calc(var(--form-py) + .625rem);
+				padding-bottom: 0.625rem;
 			}
 		}
 	}
 
-	@at-root{
-		[dir=rtl] &{
-			> .form-control{
-				&:focus ~ label, &:not(:placeholder-shown) ~ label{
-					opacity: 0.65;
-					transform: scale(0.85) translate(4.5rem, -0.5rem);
+	> .form-select {
+		padding-top: 1.625rem;
+		padding-bottom: 0.625rem;
+	}
+
+	> .form-control:focus, .form-control:not(:placeholder-shown), > .form-control-plaintext{
+		~ label {
+			opacity:.65;
+			transform: scale(.85) translateY(-.75rem) translateX(.15rem);
+		}
+		@at-root{
+			select#{&}{
+				~ label {
+					opacity:.65;
+					transform: scale(.85) translateY(-.75rem) translateX(.15rem);
 				}
-				&:-webkit-autofill ~ label {
-					opacity: 0.65;
-					transform: scale(0.85) translate(4.5rem, -0.5rem);
-				}
-			}
-			> select.form-control ~ label{
-				opacity: 0.65;
-				transform: scale(0.85) translate(4.5rem, -0.5rem);
 			}
 		}
 	}
+	> .form-control:-webkit-autofill {
+		~ label {
+			opacity:.65;
+			transform: scale(.85) translateY(-.75rem) translateX(.15rem);
+		}
+	}
+
+	> .form-control-plaintext {
+		~ label {
+			border-width: var(--form-control-border-width) 0;
+		}
+	}
+}
+[dir=rtl] .form-floating > label {
+	transform-origin: 100% 0;
 }

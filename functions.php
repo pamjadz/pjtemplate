@@ -14,13 +14,22 @@ define( 'txtdmn', 'txtdmn' );
 define( 'THEMEDIR', trailingslashit(get_template_directory()) );
 define( 'THEMEURL', trailingslashit(get_template_directory_uri()) );
 
+add_action( 'after_switch_theme', function(){
+	update_option('thumbnail_size_w', 0);
+	update_option('thumbnail_size_h', 0);
+	update_option('medium_size_h', 0);
+	update_option('medium_size_h', 0);
+	update_option('large_size_h', 0);
+	update_option('large_size_h', 0);
+});
+
 add_action( 'after_setup_theme', function(){
 	//Wordpress Compatibility
 	load_theme_textdomain( txtdmn, get_template_directory() . '/langs' );
 
 	add_theme_support( 'custom-logo', [
-		// 'width'			=> ,
-		// 'height'		=> ,
+		'width'			=> '',
+		'height'		=> '',
 		'flex-height'	=> true,
 		'flex-width'	=> true
 	]);
@@ -40,11 +49,6 @@ add_action( 'after_setup_theme', function(){
 			'after_title'	=> '</h4>',
 		]);
 	});
-
-	//Posts
-	set_post_thumbnail_size(80 ,80 ,true);
-	update_option('medium_size_w', 400);
-	update_option('medium_size_h', 300);
 
 	//Enqueue scripts
 	add_action( 'wp_enqueue_scripts', function() {
