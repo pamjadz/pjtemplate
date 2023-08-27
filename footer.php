@@ -11,7 +11,7 @@
 defined('ABSPATH') || exit;
 
 if( !isset($args['only_meta']) || FALSE === $args['only_meta'] ) : ?>
-	<div id="offcanvasMobileMenu" class="offcanvas offcanvas-start show" tabindex="-1" aria-labelledby="offcanvasMobileMenuLabel">
+	<div id="offcanvasMobileMenu" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasMobileMenuLabel">
 		<div class="offcanvas-header">
 			<div id="offcanvasMobileMenuLabel" class="offcanvas-title">Offcanvas</div>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
