@@ -25,12 +25,38 @@
 <footer id="siteFoot">
 </footer>
 
-<nav id="mmenu" class="mm-ocd" data-mm-spn-title="Title of Menu">
-	<ul>
-		<li><a href="#">Menu</a></li>
-	</ul>
-</nav>
 
-<script id="themejs" src="assets/js/script.js" data-ajax=""></script>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobileMenu" aria-controls="offcanvasMobileMenu">MENU</button>
+
+<div id="offcanvasMobileMenu" class="offcanvas offcanvas-start show" tabindex="-1" aria-labelledby="offcanvasMobileMenuLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasMobileMenuLabel">Offcanvas</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<nav class="offcanvas-body px-0">
+		<ul class="collapse-menu">
+			<li><a href="#">Menu1</a></li>
+			<li>
+				<a href="#">Menu1</a>
+				<ul>
+					<li><a href="#">Menu2</a></li>
+					<li>
+						<a href="#">Menu2</a>
+						<ul>
+							<li><a href="#">Menu3</a></li>
+							<li><a href="#">Menu3</a></li>
+							<li><a href="#">Menu3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Menu2</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Menu1</a></li>
+		</ul>
+	</nav>
+</div>
+
+<script src="assets/js/vendor/bootstrap.js"></script>
+<script id="themejs" src="assets/js/script.js" data-ajax="" defer></script>
 </body>
 </html>

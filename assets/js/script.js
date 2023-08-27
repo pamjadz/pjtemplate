@@ -7,17 +7,13 @@ if( typeof Splide !== 'undefined' && document.getElementsByClassName('splide') )
 	}
 }
 
-if( document.getElementById('mmenu') ){
-	const mmenu_target = document.getElementById('mmenu'); menu = new MmenuLight(mmenu_target), drawer = menu.offcanvas({position: ((document.dir == 'rtl') ? 'right' : 'left')});
-	menu.navigation({title: mmenu_target.dataset.mmSpnTitle});
-	document.querySelector(`[href="#${mmenu_target}"]`).addEventListener('click', function(e){
-		e.preventDefault();
-		drawer.open();
-	});
-}
-
 if( typeof jQuery !== 'undefined' ){
 	jQuery(document).ready(function($) {
 		//Jquery comes here...
+		$('.collapse-menu li').click(function (e) {
+			if(this != e.target) return;
+			e.preventDefault();
+			$(this).toggleClass('item-opened').find('> ul').slideToggle();
+		});
 	});
 }
