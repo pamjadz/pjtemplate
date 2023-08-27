@@ -13,8 +13,8 @@
 		background-color: $background-color;
 	}
 	li{
-		position: relative;
 		cursor: pointer;
+		position: relative;
 		> a{
 			display: block;
 			padding: 0.65rem 1rem;
@@ -43,3 +43,5 @@
 		}
 	}
 }
+
+#offcanvasMobileMenu{}
