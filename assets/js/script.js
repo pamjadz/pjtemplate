@@ -14,6 +14,26 @@ if( typeof jQuery !== 'undefined' ){
 			e.preventDefault();
 			$(this).toggleClass('item-opened').find('> ul').slideToggle();
 		});
+	
 		//Jquery comes here...
+		
+		//Woocomemrce JS
+		function wcMessagesHandler(){
+			if( document.querySelector('.wc-alert') ){
+				var wcAlerts = document.querySelectorAll('.wc-alert'), timehide = 6000;
+				for (let i = 0; i < wcAlerts.length; i++) {
+					const selected = wcAlerts[ i ], bsAlert = new bootstrap.Alert( selected );
+					$(selected).find('.progress').animate({width: '0%'}, timehide);
+					setTimeout(function(){
+						bsAlert.close();
+					}, timehide);
+					timehide += 1500;
+				}
+			}
+		}
+		wcMessagesHandler();
+		$(document).bind('DOMNodeInserted', function(e) {
+			wcMessagesHandler();
+		});
 	});
 }
