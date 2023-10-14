@@ -4,6 +4,7 @@
 :root{
 	--gutter: #{$gutter};
 	--container: #{$container};
+
 	@each $name,$hex in $colors {
 		--#{$name}-color: #{$hex};
 		@for $i from 1 through 9 {			
@@ -14,26 +15,28 @@
 		}
 		--#{$name}-color-rgb: #{RGB_Values($hex)};
 	}
-	
-	// --bg-card: 
-	// --bg-back: 
-	// --border-color: 
-	// --border-radius: 
-	// --text-body: 
-	// --text-muted: 
+	--bg-card: #{$bg-card};
+	--bg-body: #{$bg-body};
+	--border-color: #{$border-color};
+	--border-radius: #{$border-radius};
+	--text-body: #{$text-body};
+	--text-muted: #{$text-muted};
+
+	//Forms Variable
 	--form-py: 0.55rem;
 	--form-px: 1rem;
 	--form-control-border-width: 1px;
-	--form-control-border-color: #{$border-color};
-	--form-control-bg: #{$box-background};
-	--btn-border-radius: calc( #{$border-radius} * 0.5 );
+	--form-control-border-color: var(--border-color);
+	--form-control-bg: var(--bg-card);
+	--form-control-radius: calc( var(--border-radius) * 0.5 );
 
+	//Buttons
 	--btn-text: inherit;
 	--btn-color: transparent;
 	--btn-shadow: transparent;
 	--btn-py: .55rem;
 	--btn-px: 1rem;
-	--btn-border-radius: calc( #{$border-radius} * 0.5 );
+	--btn-border-radius: calc( var(--border-radius) * 0.5 );
 
 	--backdrop-bg: black;
 }
@@ -43,9 +46,15 @@
 @import 'fonts';
 
 body{
-	color: $text-body;
+	color: var(--text-body);
 	direction: $direction;
-	background-color: $background-color;
+	background-color: var(--bg-back);
+	&.rtl{
+		direction: rtl;
+	}
+	&.ltr{
+		direction: ltr;
+	}
 }
 @import 'layouts/atoms';
 @import 'layouts/header';

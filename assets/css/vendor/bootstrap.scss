@@ -58,7 +58,7 @@ img,svg{
 	&[height]{height:unset;}
 }
 table{caption-side:bottom;border-collapse:collapse}
-caption{padding-top:.5rem;padding-bottom:.5rem;color:$text-muted;text-align:#{if($direction == rtl, right, left)}}
+caption{padding-top:.5rem;padding-bottom:.5rem;color:var(--text-muted);text-align:#{if($direction == rtl, right, left)}}
 th{text-align:inherit;text-align:-webkit-match-parent}
 thead,tbody,tfoot,tr,td,th{border-color:inherit;border-style:solid;border-width:0}
 label{display:inline-block}

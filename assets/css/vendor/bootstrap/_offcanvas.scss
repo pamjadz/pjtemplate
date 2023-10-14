@@ -8,7 +8,7 @@
 	max-width: 100%;
 	visibility: hidden;
 	background-clip: padding-box;
-	background-color: $box-background;
+	background-color: var(--bg-card);
 	transition: transform 0.3s ease-in-out;
 	&.offcanvas-start{
 		top: 0;

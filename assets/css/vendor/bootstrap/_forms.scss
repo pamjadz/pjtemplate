@@ -27,7 +27,7 @@
 			background-size: 16px 12px;
 			&:-moz-focusring{
 				color: transparent;
-				text-shadow: 0 0 0 $text-body;
+				text-shadow: 0 0 0 var(--text-body);
 			}
 		}
 		[dir=rtl] select#{&}{
@@ -76,7 +76,7 @@
 		&:not(:disabled):not([readonly]) {cursor: pointer;}
 	}
 	&::-webkit-file-upload-button {
-		color: $text-body;
+		color: var(--text-body);
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
@@ -92,7 +92,7 @@
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
-		color: $text-body;
+		color: var(--text-body);
 		background-color: rgba(black,0.1);
 		pointer-events: none;
 		border-color: inherit;
@@ -207,7 +207,7 @@
 		&:focus{z-index: 3;}
 	}
 	.input-group-text{
-		color: $text-body;
+		color: var(--text-body);
 		@extend %dflex;
 		@extend %alignitemscenter;
 		padding: .55rem 1rem;

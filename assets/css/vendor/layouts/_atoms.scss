@@ -6,65 +6,17 @@
 	h4{font-size:95%;}
 	h5{font-size:85%;}
 	h6{font-size:75%;}
-	blockquote{
-		font-size: 18px;
-		line-height: 35px;
-		position: relative;
-		text-align: justify;
-		margin: 1.5rem;
-		padding: 1.5rem;
-		background-color: $box-background;
-		border-right: 5px solid map-get($colors, 'secondary');
-		> p{
-			display:inline-block;
-			clear: both;
-			&:before{
-				content: '”';
-			}
-			&:after{
-				content: '‟';
-			}
-		}
-		cite{
-			display: block;
-			font-size: 15px;
-			font-style: normal;
-			line-height: 35px;
-			text-align: left;
-		}
-	}
+	blockquote{}
 	a{
 		color: inherit;
 		text-decoration: underline;
 		transition: color 0.3s linear;
-		&:hover{color: map-get($colors, 'primary');}
+		&:hover{color: var(--primary-color);text-decoration:underline;}
 	}
-	ul{
-		padding: 0;
-		line-height: 30px;
-		margin: 1rem auto;
-		list-style: none;
-		> li{
-			position: relative;
-			padding-right: 1.5rem;
-			&:before{
-				top: 50%;
-				right: 0px;
-				content: '';
-				width: 6px;
-				height: 6px;
-				position: absolute;
-				border-radius: 50%;
-				transform: translateY(-50%);
-				background-color: map-get($colors, 'secondary');
-			}
-		}
-	}
-	img{
-		&.alignleft{float:left;margin:0 1rem 1rem 0}
-		&.alignright{float:right;margin:0 0 1rem 1rem}
-		&.aligncenter{display:block;margin-left:auto;margin-right:auto}
-	}
+	ul{}
+	.alignleft{float:left;margin:0 1rem 1rem 0}
+	.alignright{float:right;margin:0 0 1rem 1rem}
+	.aligncenter{display:block;margin-left:auto;margin-right:auto}
 	> *:last-child{margin-bottom:0;}
 }
 

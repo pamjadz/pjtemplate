@@ -5,7 +5,7 @@
 	--table-hover-color: #{rgba(black,0.1)};
 	width: 100%;
 	margin: 0;
-	color: $text-body;
+	color: var(--text-body);
 	vertical-align: middle;
 	border-color: var(--table-border-color);
 	&.caption-top{caption-side:top;}

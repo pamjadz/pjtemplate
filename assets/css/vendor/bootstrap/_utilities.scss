@@ -188,8 +188,8 @@
 @each $name,$hex in $colors {
 	.text-#{$name}{color:var(--#{$name}-color)!important;}
 }
-.text-body{color:$text-body!important}
-.text-muted{color:$text-muted!important}
+.text-body{color:var(--text-body)!important}
+.text-muted{color:var(--text-muted)!important}
 .text-white{color:white!important}
 .text-black{color:black!important}
 .text-nowrap,.nobr{white-space:nowrap}
@@ -197,13 +197,14 @@
 @each $name,$hex in $colors{
 	.bg-#{$name}{background-color:var(--#{$name}-color)!important;}
 }
-.bg-box{background-color:$box-background!important}
-.bg-body{background-color:$background-color!important}
+.bg-card{background-color:var(--bg-card)!important}
+.bg-body{background-color:var(--bg-body)!important}
 .bg-transparent{background-color:transparent!important}
 .user-select-none{user-select:none}
-.rounded{border-radius:$border-radius!important}
+.rounded{border-radius:var(--border-radius)}
 .rounded-0{border-radius:0!important}
-.rounded-5{border-radius:5px!important}
+.rounded-half{border-radius:calc(var(--border-radius) * 0.5)}
+.rounded-dubble{border-radius:calc(var(--border-radius) * 2)}
 .rounded-circle{border-radius:50%!important}
 .rounded-pill{border-radius:30px!important}
 

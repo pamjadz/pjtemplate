@@ -3,7 +3,7 @@
 	--modal-padding: 1rem;
 	--modal-margin: 0.5rem;
 	--modal-bg: #{$background-color};
-	--modal-border-radius: #{$border-radius};
+	--modal-border-radius: var(--border-radius);
 	position: fixed;
 	top: 0;
 	left: 0;
