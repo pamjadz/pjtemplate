@@ -18,12 +18,10 @@
 	background-color: var(--btn-color);
 	border: 1px solid transparent;
 	transition: all 0.15s ease-in-out;
-	&.disabled, &:disabled{opacity:0.65;}
-	&:not(:disabled):not(.disabled){cursor:pointer;}
-	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active{background-image:none;}
-	&:hover{box-shadow:0 3px 5px var(--btn-shadow);}
-	&:visited{color:var(--btn-text);}
+	&:not(:disabled):not(.disabled):hover{box-shadow:0 3px 5px var(--btn-shadow);}
 	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px var(--btn-shadow)}
+	&.disabled, &:disabled{opacity:0.65;}
+	&:visited{color:var(--btn-text);}
 	&.btn-icon{
 		gap: calc( var(--btn-px) * 0.5 );
 		display: inline-flex;

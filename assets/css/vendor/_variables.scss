@@ -10,12 +10,12 @@ $border-radius: 0.375rem;
 $border-color: #ced4da;
 
 $colors:(
-	"primary": #007bff,
-	"secondary": #6c757d,
-	"success": #408844,
-	"danger": #d74141,
-	"warning": #f08124,
-	"info": #1892d5,
+	'primary': #007bff,
+	'secondary': #6c757d,
+	'success': #408844,
+	'danger': #d74141,
+	'warning': #f08124,
+	'info': #1892d5,
 );
 
 $breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px);
@@ -42,6 +42,22 @@ $breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400p
 @mixin fw($weight){
 	font-weight: $weight;
 	font-variation-settings: "wght" $weight;
+}
+
+@mixin media($args...) {
+	$query: "";
+	$last: nth($args, length($args));
+	@each $arg in $args {
+		$op: "";
+		$min_max: str-slice($arg, 0, 1);
+		@if $arg != $last{
+			$op: " and ";
+		}
+		$query : if($min_max == '<', (min-width: #{$arg}), (max-width: #{$arg}));
+	}
+	@media #{$query} {
+		@content;
+	}
 }
 
 %listunstyled{margin:0;padding:0;list-style:none;}

@@ -1,10 +1,13 @@
 var themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.ajax;
 
-if( typeof Splide !== 'undefined' && document.getElementsByClassName('splide') ){
-	const splides = document.getElementsByClassName('splide');
-	for ( var i = 0; i < splides.length; i++ ) {
-		new Splide( splides[i] ).mount();
-	}
+if( typeof Splide !== 'undefined' && document.querySelector('.splide') ){
+	document.addEventListener( 'DOMContentLoaded', function() {
+		const splides = document.querySelectorAll(' .splide ');
+		for ( var i = 0; i < splides.length; i++ ) {
+			if( splides[i].classList.contains('no-mount') ) continue;
+			new Splide( splides[i] ).mount();
+		}
+	} );
 }
 
 if( typeof jQuery !== 'undefined' ){
