@@ -16,5 +16,6 @@
 ## توسعه دهنده
 
 - [@Pouriya Amjadzadeh](https://pamjad.me)
+- [@Arvand Team](https://arvandec.com)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
