@@ -44,18 +44,16 @@ $breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400p
 	font-variation-settings: "wght" $weight;
 }
 
-@mixin media($args...) {
-	$query: "";
+@mixin media($args...){
+	$query: '';
 	$last: nth($args, length($args));
 	@each $arg in $args {
-		$op: "";
-		$min_max: str-slice($arg, 0, 1);
-		@if $arg != $last{
-			$op: " and ";
-		}
-		$query : if($min_max == '<', (min-width: #{$arg}), (max-width: #{$arg}));
+		$op: if($arg != $last, ' and ', '');
+		$minmax: if(str-slice($arg, 1, 1) == '<', min-width, max-width);
+		$size: str-slice($arg, 2);
+		$query: append($query, '(#{$minmax}:#{$size})'#{$op});
 	}
-	@media #{$query} {
+	@media #{$query}{
 		@content;
 	}
 }
