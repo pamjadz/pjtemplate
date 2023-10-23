@@ -4,16 +4,16 @@
 	--modal-margin: 0.5rem;
 	--modal-bg: var(--bg-card);
 	--modal-border-radius: var(--border-radius);
-	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1055;
-	display: none;
 	width: 100%;
 	height: 100%;
+	outline: 0;
+	z-index: 1055;
+	display: none;
 	overflow-x: hidden;
 	overflow-y: auto;
-	outline: 0;
+	position: fixed;
 	.modal-dialog {
 		position: relative;
 		width: auto;
