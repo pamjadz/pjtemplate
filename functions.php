@@ -66,23 +66,22 @@ add_action( 'after_setup_theme', function(){
 
 		if ( comments_open() ) wp_enqueue_script('comment-reply');
 
-	}, 999 );
+	}, 99 );
 
-	add_filter( 'body_class', function($classes) {
+	add_filter( 'body_class', function( $classes ) {
 		$classes = [];
 		if( is_404() ) $classes[] = 'error404';
 		$classes[] = ( is_rtl() ) ? 'rtl' : 'ltr';
 		if( is_admin_bar_showing() ) $classes[] = 'admin_bar';
 		return $classes;
-	}, 999 );
+	}, 99 );
 
-	add_filter('header_class', function( $class ){
-		$class = 'default-class';
-		return $class;
+	add_filter('header_class', function( $classes ) {
+		$classes = [];
+		return $classes;
 	});
 
 	add_action( 'wp_footer', function(){
-		//include Themejs
 		if( !is_404() ){
 			printf('<script id="themejs" src="%s" data-ajax="%s" defer></script>', THEMEURL. 'assets/js/script.js', admin_url('admin-ajax.php') );
 		}
@@ -91,3 +90,22 @@ add_action( 'after_setup_theme', function(){
 	//includes
 	foreach (glob(THEMEDIR.'inc/*.php') as $file) require_once $file;
 });
+
+
+//------Theme Functions
+function header_class(){
+	$classes = apply_filters( 'header_class', [] );
+	if( !empty( $classes ) && $echo ){
+		printf(' class="%s"', esc_attr( implode(' ', $classes) ) );
+	}
+}
+
+function the_logo(){
+	if( has_custom_logo() ){
+		the_custom_logo();
+	} else {
+		$logo = '';
+		$aria_current = is_front_page() && ! is_paged() ? ' aria-current="page"' : '';
+		printf('<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>', esc_url( home_url( '/' ) ), $aria_current, $logo);
+	}
+}
