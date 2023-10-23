@@ -2,7 +2,7 @@
 	--modal-width: 500px;
 	--modal-padding: 1rem;
 	--modal-margin: 0.5rem;
-	--modal-bg: #{$background-color};
+	--modal-bg: var(--bg-card);
 	--modal-border-radius: var(--border-radius);
 	position: fixed;
 	top: 0;
