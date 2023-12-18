@@ -27,7 +27,7 @@
 			background-size: 16px 12px;
 			&:-moz-focusring{
 				color: transparent;
-				text-shadow: 0 0 0 var(--text-body);
+				text-shadow: 0 0 0 var(--text-muted);
 			}
 		}
 		[dir=rtl] select#{&}{
@@ -47,7 +47,6 @@
 		font-size: 95%;
 		opacity: 0.7;
 	}
-
 	&::-webkit-date-and-time-value{
 		height: 1.5em;
 	}
@@ -56,9 +55,14 @@
 		padding: 0;
 	}
 	&:disabled{
-		--form-control-disabled-bg: #{$border-color};
+		--form-control-disabled-bg: var(--border-color);
 		background-color: var(--form-control-disabled-bg);
-		opacity: 0.5;
+	}
+	&:invalid{
+		border-color: var(--danger-color);
+		&:focus{
+			box-shadow: 0 0 0 0.25rem rgba(var(--danger-color-rgb), 0.25);
+		}
 	}
 	&.form-control-sm{
 		--form-py: .375rem;
@@ -76,7 +80,7 @@
 		&:not(:disabled):not([readonly]) {cursor: pointer;}
 	}
 	&::-webkit-file-upload-button {
-		color: var(--text-body);
+		color: $text-body;
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
@@ -92,7 +96,7 @@
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
-		color: var(--text-body);
+		color: $text-body;
 		background-color: rgba(black,0.1);
 		pointer-events: none;
 		border-color: inherit;
@@ -123,7 +127,7 @@
 		print-color-adjust: exact;
 		cursor: pointer;
 		float: inline-start;
-		background: var(--form-control-bg) no-repeat center / contain;
+		background: $box-background no-repeat center / contain;
 		border: var(--form-control-border-width) solid var(--form-control-border-color);
 		margin-inline-end: 0.5em;
 		transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -207,7 +211,7 @@
 		&:focus{z-index: 3;}
 	}
 	.input-group-text{
-		color: var(--text-body);
+		color: $text-body;
 		@extend %dflex;
 		@extend %alignitemscenter;
 		padding: .55rem 1rem;
@@ -227,20 +231,22 @@
 		border-top-right-radius: var(--form-control-radius);
 		border-bottom-right-radius: var(--form-control-radius);
 	}
-}
 
-[dir="rtl"] .input-group,.input-group[dir="rtl"]{
-	& > *:first-child{
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-top-right-radius: var(--form-control-radius);
-		border-bottom-right-radius: var(--form-control-radius);
-	}
-	& > *:last-child{
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-		border-top-left-radius: var(--form-control-radius);
-		border-bottom-left-radius: var(--form-control-radius);
+	@at-root{
+		[dir="rtl"] .input-group{
+			& > *:first-child{
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-top-right-radius: var(--form-control-radius);
+				border-bottom-right-radius: var(--form-control-radius);
+			}
+			& > *:last-child{
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				border-top-left-radius: var(--form-control-radius);
+				border-bottom-left-radius: var(--form-control-radius);
+			}
+		}
 	}
 }
 
@@ -324,4 +330,12 @@
 }
 [dir=rtl] .form-floating > label {
 	transform-origin: 100% 0;
+}
+
+.invalid-feedback {
+	display: none;
+	width: 100%;
+	color: var(--danger-color);
+	margin-top: 0.25rem;
+	font-size: 0.875em;
 }

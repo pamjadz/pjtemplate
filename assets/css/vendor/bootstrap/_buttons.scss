@@ -16,7 +16,7 @@
 	padding: var(--btn-py) var(--btn-px);
 	background-image: none;
 	background-color: var(--btn-color);
-	border: 1px solid transparent;
+	border: var(--btn-border, 1px) solid transparent;
 	transition: all 0.15s ease-in-out;
 	&:not(:disabled):not(.disabled):hover{box-shadow:0 3px 5px var(--btn-shadow);}
 	&:not(:disabled):not(.disabled):active:focus{box-shadow:0px 6px 10px var(--btn-shadow)}

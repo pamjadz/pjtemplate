@@ -1,4 +1,15 @@
-var themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.ajax;
+const themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.ajax;
+
+const validationForms = document.querySelectorAll('.form-validation');
+Array.from(validationForms).forEach( function(form) {
+	form.addEventListener('submit', function(e){
+		if( !form.checkValidity() ) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
+		form.classList.add('was-validated')
+	}, false);
+});
 
 if( typeof Splide !== 'undefined' && document.querySelector('.splide') ){
 	document.addEventListener( 'DOMContentLoaded', function() {
@@ -34,6 +45,7 @@ if( typeof jQuery !== 'undefined' ){
 				}
 			}
 		}
+		
 		wcMessagesHandler();
 		$(document).bind('DOMNodeInserted', function(e) {
 			wcMessagesHandler();

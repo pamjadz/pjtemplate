@@ -83,9 +83,9 @@ add_action( 'after_setup_theme', function(){
 
 	add_action( 'wp_footer', function(){
 		if( !is_404() ){
-			printf('<script id="themejs" src="%s" data-ajax="%s" defer></script>', THEMEURL. 'assets/js/script.js', admin_url('admin-ajax.php') );
+			printf('<script id="themejs" src="%s" data-ajax="%s" defer></script>', THEMEURL. 'assets/js/script.min.js', admin_url('admin-ajax.php') );
 		}
-	}, 9999 );
+	}, 99);
 
 	//includes
 	foreach (glob(THEMEDIR.'inc/*.php') as $file) require_once $file;

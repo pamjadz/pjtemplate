@@ -34,6 +34,7 @@
 	--btn-text: inherit;
 	--btn-color: transparent;
 	--btn-shadow: transparent;
+	// --btn-border: 1px;
 	--btn-py: .55rem;
 	--btn-px: 1rem;
 	--btn-border-radius: calc( var(--border-radius) * 0.5 );
@@ -41,7 +42,7 @@
 	--backdrop-bg: black;
 }
 
-::selection{color:#fff;background-color:var(--primary-color-300);}
+::selection{color:#fff;background-color:var(--primary-color-600);}
 
 @import 'fonts';
 
