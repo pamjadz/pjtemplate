@@ -127,7 +127,7 @@
 		print-color-adjust: exact;
 		cursor: pointer;
 		float: inline-start;
-		background: $box-background no-repeat center / contain;
+		background: var(--form-control-bg) no-repeat center / contain;
 		border: var(--form-control-border-width) solid var(--form-control-border-color);
 		margin-inline-end: 0.5em;
 		transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
