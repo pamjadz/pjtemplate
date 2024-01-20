@@ -8,7 +8,7 @@
 .container{max-width:var(--container);}
 
 @media (min-width: 768px) and (max-width:1140px){
-	.container{padding-right:var(--gutter);padding-left:var(--gutter);}
+	.container{padding-right:calc(var(--gutter) * 1.5);padding-left:calc(var(--gutter) * 1.5);}
 }
 
 .row{
@@ -25,6 +25,7 @@
 		padding-right: calc(var(--gutter) * 0.5);
 	}
 }
+
 .g-0{--gutter:0}
 .g-1{--gutter:0.25rem}
 .g-2{--gutter:0.5rem}

@@ -18,6 +18,7 @@
 	--bg-card: #{$bg-card};
 	--bg-body: #{$bg-body};
 	--border-color: #{$border-color};
+	--border-color-rgb: #{RGB_Values($border-color)};
 	--border-radius: #{$border-radius};
 	--text-body: #{$text-body};
 	--text-muted: #{$text-muted};

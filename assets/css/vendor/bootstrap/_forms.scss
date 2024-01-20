@@ -27,7 +27,7 @@
 			background-size: 16px 12px;
 			&:-moz-focusring{
 				color: transparent;
-				text-shadow: 0 0 0 var(--text-muted);
+				text-shadow: 0 0 0 var(--text-body);
 			}
 		}
 		[dir=rtl] select#{&}{
@@ -47,6 +47,7 @@
 		font-size: 95%;
 		opacity: 0.7;
 	}
+
 	&::-webkit-date-and-time-value{
 		height: 1.5em;
 	}
@@ -55,14 +56,9 @@
 		padding: 0;
 	}
 	&:disabled{
-		--form-control-disabled-bg: var(--border-color);
+		--form-control-disabled-bg: #{$border-color};
 		background-color: var(--form-control-disabled-bg);
-	}
-	&:invalid{
-		border-color: var(--danger-color);
-		&:focus{
-			box-shadow: 0 0 0 0.25rem rgba(var(--danger-color-rgb), 0.25);
-		}
+		opacity: 0.5;
 	}
 	&.form-control-sm{
 		--form-py: .375rem;
@@ -80,7 +76,7 @@
 		&:not(:disabled):not([readonly]) {cursor: pointer;}
 	}
 	&::-webkit-file-upload-button {
-		color: $text-body;
+		color: var(--text-body);
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
@@ -96,7 +92,7 @@
 		padding: var(--form-py) var(--form-px);
 		margin: calc(var(--form-py) * -1) calc(var(--form-px) * -1);
 		margin-inline-end: var(--form-px);
-		color: $text-body;
+		color: var(--text-body);
 		background-color: rgba(black,0.1);
 		pointer-events: none;
 		border-color: inherit;
@@ -201,7 +197,7 @@
 		min-width: 0;
 		flex: 1 1 auto;
 		position: relative;
-		border-radius: 0 !important;
+		border-radius: 0;
 		&:focus{z-index: 3;}
 	}
 	.btn{
@@ -211,10 +207,10 @@
 		&:focus{z-index: 3;}
 	}
 	.input-group-text{
-		color: $text-body;
+		color: var(--text-body);
 		@extend %dflex;
 		@extend %alignitemscenter;
-		padding: .55rem 1rem;
+		padding: var(--form-py) var(--form-px);
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 1.5;
@@ -223,30 +219,13 @@
 		border: var(--form-control-border-width) solid var(--form-control-border-color);
 	}
 	& > *:first-child{
-		border-top-left-radius: var(--form-control-radius);
-		border-bottom-left-radius: var(--form-control-radius);
+		border-start-start-radius: var(--form-control-radius);
+		border-end-start-radius: var(--form-control-radius);
 	}
 	& > *:not(:last-child){margin-inline-end: calc(var(--form-control-border-width) * -1);}
 	& > *:last-child{
-		border-top-right-radius: var(--form-control-radius);
-		border-bottom-right-radius: var(--form-control-radius);
-	}
-
-	@at-root{
-		[dir="rtl"] .input-group{
-			& > *:first-child{
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
-				border-top-right-radius: var(--form-control-radius);
-				border-bottom-right-radius: var(--form-control-radius);
-			}
-			& > *:last-child{
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-				border-top-left-radius: var(--form-control-radius);
-				border-bottom-left-radius: var(--form-control-radius);
-			}
-		}
+		border-start-end-radius: var(--form-control-radius);
+		border-end-end-radius: var(--form-control-radius);
 	}
 }
 
@@ -330,12 +309,4 @@
 }
 [dir=rtl] .form-floating > label {
 	transform-origin: 100% 0;
-}
-
-.invalid-feedback {
-	display: none;
-	width: 100%;
-	color: var(--danger-color);
-	margin-top: 0.25rem;
-	font-size: 0.875em;
 }

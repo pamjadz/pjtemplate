@@ -17,10 +17,16 @@ define( 'THEMEURL', trailingslashit(get_template_directory_uri()) );
 add_action( 'after_switch_theme', function(){
 	update_option('thumbnail_size_w', 0);
 	update_option('thumbnail_size_h', 0);
+	update_option('medium_size_w', 0);
 	update_option('medium_size_h', 0);
-	update_option('medium_size_h', 0);
+	update_option('medium_crop', true);
+
+	update_option('medium_large_size_w', 0);
+	update_option('medium_large_size_h', 0);
+
+	update_option('large_size_w', 0);
 	update_option('large_size_h', 0);
-	update_option('large_size_h', 0);
+	update_option('large_crop', true);
 });
 
 add_action( 'after_setup_theme', function(){

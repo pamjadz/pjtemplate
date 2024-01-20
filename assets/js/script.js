@@ -1,7 +1,7 @@
 const themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.ajax;
 
 const validationForms = document.querySelectorAll('.form-validation');
-Array.from(validationForms).forEach( function(form) {
+Array.from(validationForms).forEach(function(form) {
 	form.addEventListener('submit', function(e){
 		if( !form.checkValidity() ) {
 			e.preventDefault();
@@ -9,6 +9,18 @@ Array.from(validationForms).forEach( function(form) {
 		}
 		form.classList.add('was-validated')
 	}, false);
+	const inputs = form.querySelectorAll('input, textarea, select');
+	Array.from(inputs).forEach(function(input) {
+		input.oninvalid = function(e) {
+			e.target.setCustomValidity('');
+			if( !e.target.validity.valid && e.target.title.length > 0 ) {
+				e.target.setCustomValidity( e.target.title );
+			}
+		}
+		input.oninput = function(e) {
+			e.target.setCustomValidity('');
+		}
+	});
 });
 
 if( typeof Splide !== 'undefined' && document.querySelector('.splide') ){
