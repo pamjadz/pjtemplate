@@ -66,7 +66,6 @@ if( typeof jQuery !== 'undefined' ){
 		// 	e.preventDefault();
 		// 	$(this).toggleClass('item-opened').find('> ul').slideToggle();
 		// });
-
-		//Jquery comes here...
+		
 	});
 }

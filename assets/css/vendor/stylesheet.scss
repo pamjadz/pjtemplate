@@ -43,12 +43,8 @@ body{
 	color: var(--text-body);
 	direction: $direction;
 	background-color: var(--bg-body);
-	&.rtl{
-		direction: rtl;
-	}
-	&.ltr{
-		direction: ltr;
-	}
+	// &.rtl{direction: rtl;}
+	// &.ltr{direction: ltr;}
 }
 
 
