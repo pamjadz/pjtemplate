@@ -33,6 +33,9 @@ add_action( 'after_setup_theme', function(){
 	//Wordpress Compatibility
 	load_theme_textdomain( txtdmn, get_template_directory() . '/langs' );
 
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 1320;
+
 	add_theme_support( 'custom-logo', [
 		'width'			=> '',
 		'height'		=> '',
@@ -65,7 +68,7 @@ add_action( 'after_setup_theme', function(){
 
 		if( !is_admin() ) {
 			wp_deregister_script( 'jquery' );
-			wp_enqueue_script( 'jquery', THEMEURL.'assets/js/vendor/jquery.min.js', [], '', false );
+			wp_enqueue_script( 'jquery', THEMEURL.'assets/js/vendor/jquery.min.js', [], '3.7.1', false );
 		}
 
 		wp_enqueue_script( 'splide', THEMEURL.'assets/js/vendor/splide.min.js', [], '4.1.3', true );

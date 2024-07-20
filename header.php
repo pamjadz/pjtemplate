@@ -27,9 +27,14 @@ defined('ABSPATH') || exit;
 
 <body <?php body_class(); ?>>
 
+
 <?php
 wp_body_open();
 if( isset($args['only_meta']) && TRUE === $args['only_meta'] ) return;
 ?>
+
+<header id="siteHead">
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis officiis a illum est et in, voluptates accusantium earum, voluptatem quae tenetur similique assumenda dicta quisquam. Ipsa nobis tempore amet?
+</header>
 
 <!--HEADER HERE-->

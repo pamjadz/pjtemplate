@@ -3,16 +3,8 @@
 @import 'plugins';
 :root{
 	--gutter: #{$gutter};
-	--container: #{$container};
-
 	@each $name,$hex in $colors {
 		--#{$name}-color: #{$hex};
-		@for $i from 1 through 9 {			
-			@if $i != 5 {
-				$shade: $i * 100;
-				--#{$name}-color-#{$shade}: #{bootstrap_shades($hex, $shade)};
-			}
-		}
 		--#{$name}-color-rgb: #{RGB_Values($hex)};
 	}
 	--bg-card: #{$bg-card};
@@ -43,14 +35,14 @@
 	--backdrop-bg: black;
 }
 
-::selection{color:#fff;background-color:var(--primary-color-600);}
+::selection{color:#fff;background-color:var(--primary-color);}
 
 @import 'fonts';
 
 body{
 	color: var(--text-body);
 	direction: $direction;
-	background-color: var(--bg-back);
+	background-color: var(--bg-body);
 	&.rtl{
 		direction: rtl;
 	}
@@ -58,6 +50,8 @@ body{
 		direction: ltr;
 	}
 }
+
+
 @import 'layouts/atoms';
 @import 'layouts/header';
 //Other Layouts

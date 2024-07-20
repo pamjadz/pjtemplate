@@ -10,17 +10,18 @@
 
 defined('ABSPATH') || exit;
 
-if( !isset($args['only_meta']) || FALSE === $args['only_meta'] ) : ?>
-	<div id="offcanvasMobileMenu" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasMobileMenuLabel">
-		<div class="offcanvas-header">
-			<div id="offcanvasMobileMenuLabel" class="offcanvas-title">Offcanvas</div>
-			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		</div>
-		<nav class="offcanvas-body px-0">
-			<?php wp_nav_menu( ['theme_location' => (has_nav_menu('responsive') ? 'responsive' : 'primary'),'container' => 'ul', 'menu_class' => 'collapse-menu'] ); ?>
-		</nav>
-	</div>
-<?php endif; ?>
+get_template_part('parts/offcanvas', 'mmenu');
+
+if( isset( $args['only_meta'] ) && TRUE === $args['only_meta'] ){
+	wp_footer();
+	echo '</body></html>';
+	return;
+}
+?>
+
+<footer id="siteFoot">
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laborum ratione iusto velit esse quos porro molestias magni unde, non aliquid veritatis, vitae explicabo ducimus dignissimos, assumenda facere quo? Numquam.
+</footer>
 
 <?php wp_footer(); ?>
 
