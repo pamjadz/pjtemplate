@@ -24,7 +24,7 @@ get_header(); ?>
 			<button class="splide__arrow splide__arrow--next btn btn-default" type="button" aria-label="Next slide" aria-controls="siteIntro-track"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button>
 		</div>
 	</div>
-	<div class="contacts row g-0 text-center">
+	<div class="contacts row g-0 lh-40 fsz-18 text-center">
 		<div class="col-6 col-lg-4 p-3 order-first">TEST</div>
 		<div class="col-6 col-lg-4 p-3 order-lg-last"><?php bloginfo('admin_email'); ?></div>
 		<div class="col-lg-4 p-3 socials">TEST</div>
