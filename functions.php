@@ -9,8 +9,7 @@
 
 defined('ABSPATH') || exit;
 
-//TODO: Renmate txtdmn
-define( 'txtdmn', 'txtdmn' );
+define( 'txtdmn', 'stanson' );
 define( 'THEMEDIR', trailingslashit(get_template_directory()) );
 define( 'THEMEURL', trailingslashit(get_template_directory_uri()) );
 
@@ -87,9 +86,14 @@ add_action( 'after_setup_theme', function(){
 
 	add_filter('header_class', function( $classes ) {
 		$classes = [];
-		return $classes;
+		if( is_front_page() ) $classes[] = 'position-absolute';
+		return array_unique( $classes );
 	});
 
+	add_action( 'wp_body_open', function(){
+		get_template_part('parts/icons');
+	}, 99);
+	
 	add_action( 'wp_footer', function(){
 		if( !is_404() ){
 			printf('<script id="themejs" src="%s" data-ajax="%s" defer></script>', THEMEURL. 'assets/js/script.min.js', admin_url('admin-ajax.php') );
@@ -104,7 +108,7 @@ add_action( 'after_setup_theme', function(){
 //------Theme Functions
 function header_class(){
 	$classes = apply_filters( 'header_class', [] );
-	if( !empty( $classes ) && $echo ){
+	if( !empty( $classes ) ){
 		printf(' class="%s"', esc_attr( implode(' ', $classes) ) );
 	}
 }

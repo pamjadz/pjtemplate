@@ -33,6 +33,11 @@
 	--btn-border-radius: calc( var(--border-radius) * 0.5 );
 
 	--backdrop-bg: black;
+
+	--siteHeight-h: 100px;
+
+
+	--bg-footer: #262626;
 }
 
 ::selection{color:#fff;background-color:var(--primary-color);}
@@ -41,15 +46,16 @@
 
 body{
 	color: var(--text-body);
-	direction: $direction;
 	background-color: var(--bg-body);
-	// &.rtl{direction: rtl;}
-	// &.ltr{direction: ltr;}
+	font-family: 'Peyda';
+	font-size: 16px;
+	&.rtl{direction: rtl;}
+	&.ltr{direction: ltr;}
 }
 
 
 @import 'layouts/atoms';
 @import 'layouts/header';
-//Other Layouts
+@import 'layouts/front';
 @import 'layouts/footer';
 @import 'responsive';

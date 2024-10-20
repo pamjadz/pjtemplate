@@ -80,26 +80,26 @@
 	}
 	.m-#{$i}{margin:#{$rem}!important}
 	.m-n#{$i}{margin:-#{$rem}!important}
-	.mx-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-	.mx-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+	.mx-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+	.mx-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 	.my-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 	.my-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 	.mt-#{$i}{margin-top:#{$rem}!important}
 	.mt-n#{$i}{margin-top:-#{$rem}!important}
-	.mr-#{$i}{margin-right:#{$rem}!important}
-	.mr-n#{$i}{margin-right:-#{$rem}!important}
+	.ms-#{$i}{margin-inline-start:#{$rem}!important}
+	.ms-n#{$i}{margin-inline-start:-#{$rem}!important}
 	.mb-#{$i}{margin-bottom:#{$rem}!important}
 	.mb-n#{$i}{margin-bottom:-#{$rem}!important}
-	.ml-#{$i}{margin-left:#{$rem}!important}
-	.ml-n#{$i}{margin-left:-#{$rem}!important}
+	.me-#{$i}{margin-inline-end:#{$rem}!important}
+	.me-n#{$i}{margin-inline-end:-#{$rem}!important}
 }
 .m-auto{margin:auto!important}
 .mx-auto{margin-right:auto!important;margin-left:auto!important}
 .my-auto{margin-top:auto!important;margin-bottom:auto!important}
 .mt-auto{margin-top:auto!important}
-.mr-auto{margin-right:auto!important}
+.ms-auto{margin-right:auto!important}
 .mb-auto{margin-bottom:auto!important}
-.ml-auto{margin-left:auto!important}
+.me-auto{margin-left:auto!important}
 
 .p-0{padding:0!important}
 .p-1{padding:.25rem!important}
@@ -230,26 +230,26 @@
 		}
 		.m-sm-#{$i}{margin:#{$rem}!important}
 		.m-sm-n#{$i}{margin:-#{$rem}!important}
-		.mx-sm-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-		.mx-sm-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.mx-sm-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+		.mx-sm-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 		.my-sm-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 		.my-sm-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 		.mt-sm-#{$i}{margin-top:#{$rem}!important}
 		.mt-sm-n#{$i}{margin-top:-#{$rem}!important}
-		.mr-sm-#{$i}{margin-right:#{$rem}!important}
-		.mr-sm-n#{$i}{margin-right:-#{$rem}!important}
+		.ms-sm-#{$i}{margin-inline-start:#{$rem}!important}
+		.ms-sm-n#{$i}{margin-inline-start:-#{$rem}!important}
 		.mb-sm-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-sm-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-sm-#{$i}{margin-left:#{$rem}!important}
-		.ml-sm-n#{$i}{margin-left:-#{$rem}!important}
+		.me-sm-#{$i}{margin-inline-end:#{$rem}!important}
+		.me-sm-n#{$i}{margin-inline-end:-#{$rem}!important}
 	}
 	.m-sm-sm-auto{margin:auto!important}
 	.mx-sm-auto{margin-right:auto!important;margin-left:auto!important}
 	.my-sm-auto{margin-top:auto!important;margin-bottom:auto!important}
 	.mt-sm-auto{margin-top:auto!important}
-	.mr-sm-auto{margin-right:auto!important}
+	.ms-sm-auto{margin-right:auto!important}
 	.mb-sm-auto{margin-bottom:auto!important}
-	.ml-sm-auto{margin-left:auto!important}
+	.me-sm-auto{margin-left:auto!important}
 	.p-sm-0{padding:0!important}
 	.p-sm-1{padding:.25rem!important}
 	.p-sm-2{padding:.5rem!important}
@@ -319,26 +319,26 @@
 		}
 		.m-md-#{$i}{margin:#{$rem}!important}
 		.m-md-n#{$i}{margin:-#{$rem}!important}
-		.mx-md-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-		.mx-md-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.mx-md-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+		.mx-md-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 		.my-md-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 		.my-md-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 		.mt-md-#{$i}{margin-top:#{$rem}!important}
 		.mt-md-n#{$i}{margin-top:-#{$rem}!important}
-		.mr-md-#{$i}{margin-right:#{$rem}!important}
-		.mr-md-n#{$i}{margin-right:-#{$rem}!important}
+		.ms-md-#{$i}{margin-inline-start:#{$rem}!important}
+		.ms-md-n#{$i}{margin-inline-start:-#{$rem}!important}
 		.mb-md-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-md-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-md-#{$i}{margin-left:#{$rem}!important}
-		.ml-md-n#{$i}{margin-left:-#{$rem}!important}
+		.me-md-#{$i}{margin-inline-end:#{$rem}!important}
+		.me-md-n#{$i}{margin-inline-end:-#{$rem}!important}
 	}
 	.m-md-auto{margin:auto!important}
 	.mx-md-auto{margin-right:auto!important;margin-left:auto!important}
 	.my-md-auto{margin-top:auto!important;margin-bottom:auto!important}
 	.mt-md-auto{margin-top:auto!important}
-	.mr-md-auto{margin-right:auto!important}
+	.ms-md-auto{margin-right:auto!important}
 	.mb-md-auto{margin-bottom:auto!important}
-	.ml-md-auto{margin-left:auto!important}
+	.me-md-auto{margin-left:auto!important}
 	.p-md-0{padding:0!important}
 	.p-md-1{padding:.25rem!important}
 	.p-md-2{padding:.5rem!important}
@@ -408,26 +408,26 @@
 		}
 		.m-lg-#{$i}{margin:#{$rem}!important}
 		.m-lg-n#{$i}{margin:-#{$rem}!important}
-		.mx-lg-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-		.mx-lg-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.mx-lg-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+		.mx-lg-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 		.my-lg-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 		.my-lg-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 		.mt-lg-#{$i}{margin-top:#{$rem}!important}
 		.mt-lg-n#{$i}{margin-top:-#{$rem}!important}
-		.mr-lg-#{$i}{margin-right:#{$rem}!important}
-		.mr-lg-n#{$i}{margin-right:-#{$rem}!important}
+		.ms-lg-#{$i}{margin-inline-start:#{$rem}!important}
+		.ms-lg-n#{$i}{margin-inline-start:-#{$rem}!important}
 		.mb-lg-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-lg-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-lg-#{$i}{margin-left:#{$rem}!important}
-		.ml-lg-n#{$i}{margin-left:-#{$rem}!important}
+		.me-lg-#{$i}{margin-inline-end:#{$rem}!important}
+		.me-lg-n#{$i}{margin-inline-end:-#{$rem}!important}
 	}
 	.m-lg-auto{margin:auto!important}
 	.mx-lg-auto{margin-right:auto!important;margin-left:auto!important}
 	.my-lg-auto{margin-top:auto!important;margin-bottom:auto!important}
 	.mt-lg-auto{margin-top:auto!important}
-	.mr-lg-auto{margin-right:auto!important}
+	.ms-lg-auto{margin-right:auto!important}
 	.mb-lg-auto{margin-bottom:auto!important}
-	.ml-lg-auto{margin-left:auto!important}
+	.me-lg-auto{margin-left:auto!important}
 
 	.p-lg-0{padding:0!important}
 	.p-lg-1{padding:.25rem!important}
@@ -498,26 +498,26 @@
 		}
 		.m-xl-#{$i}{margin:#{$rem}!important}
 		.m-xl-n#{$i}{margin:-#{$rem}!important}
-		.mx-xl-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-		.mx-xl-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.mx-xl-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+		.mx-xl-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 		.my-xl-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 		.my-xl-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 		.mt-xl-#{$i}{margin-top:#{$rem}!important}
 		.mt-xl-n#{$i}{margin-top:-#{$rem}!important}
-		.mr-xl-#{$i}{margin-right:#{$rem}!important}
-		.mr-xl-n#{$i}{margin-right:-#{$rem}!important}
+		.ms-xl-#{$i}{margin-inline-start:#{$rem}!important}
+		.ms-xl-n#{$i}{margin-inline-start:-#{$rem}!important}
 		.mb-xl-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-xl-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-xl-#{$i}{margin-left:#{$rem}!important}
-		.ml-xl-n#{$i}{margin-left:-#{$rem}!important}
+		.me-xl-#{$i}{margin-inline-end:#{$rem}!important}
+		.me-xl-n#{$i}{margin-inline-end:-#{$rem}!important}
 	}
 	.m-xl-auto{margin:auto!important}
 	.mx-xl-auto{margin-right:auto!important;margin-left:auto!important}
 	.my-xl-auto{margin-top:auto!important;margin-bottom:auto!important}
 	.mt-xl-auto{margin-top:auto!important}
-	.mr-xl-auto{margin-right:auto!important}
+	.ms-xl-auto{margin-right:auto!important}
 	.mb-xl-auto{margin-bottom:auto!important}
-	.ml-xl-auto{margin-left:auto!important}
+	.me-xl-auto{margin-left:auto!important}
 
 	.p-xl-0{padding:0!important}
 	.p-xl-1{padding:.25rem!important}
@@ -595,26 +595,26 @@
 		}
 		.m-xxl-#{$i}{margin:#{$rem}!important}
 		.m-xxl-n#{$i}{margin:-#{$rem}!important}
-		.mx-xxl-#{$i}{margin-right:#{$rem}!important;margin-left:#{$rem}!important}
-		.mx-xxl-n#{$i}{margin-right:-#{$rem}!important;margin-left:-#{$rem}!important}
+		.mx-xxl-#{$i}{margin-inline-start:#{$rem}!important;margin-inline-end:#{$rem}!important}
+		.mx-xxl-n#{$i}{margin-inline-start:-#{$rem}!important;margin-inline-end:-#{$rem}!important}
 		.my-xxl-#{$i}{margin-top:#{$rem}!important;margin-bottom:#{$rem}!important}
 		.my-xxl-n#{$i}{margin-top:-#{$rem}!important;margin-bottom:-#{$rem}!important}
 		.mt-xxl-#{$i}{margin-top:#{$rem}!important}
 		.mt-xxl-n#{$i}{margin-top:-#{$rem}!important}
-		.mr-xxl-#{$i}{margin-right:#{$rem}!important}
-		.mr-xxl-n#{$i}{margin-right:-#{$rem}!important}
+		.ms-xxl-#{$i}{margin-inline-start:#{$rem}!important}
+		.ms-xxl-n#{$i}{margin-inline-start:-#{$rem}!important}
 		.mb-xxl-#{$i}{margin-bottom:#{$rem}!important}
 		.mb-xxl-n#{$i}{margin-bottom:-#{$rem}!important}
-		.ml-xxl-#{$i}{margin-left:#{$rem}!important}
-		.ml-xxl-n#{$i}{margin-left:-#{$rem}!important}
+		.me-xxl-#{$i}{margin-inline-end:#{$rem}!important}
+		.me-xxl-n#{$i}{margin-inline-end:-#{$rem}!important}
 	}
 	.m-xxl-auto{margin:auto!important}
 	.mx-xxl-auto{margin-right:auto!important;margin-left:auto!important}
 	.my-xxl-auto{margin-top:auto!important;margin-bottom:auto!important}
 	.mt-xxl-auto{margin-top:auto!important}
-	.mr-xxl-auto{margin-right:auto!important}
+	.ms-xxl-auto{margin-right:auto!important}
 	.mb-xxl-auto{margin-bottom:auto!important}
-	.ml-xxl-auto{margin-left:auto!important}
+	.me-xxl-auto{margin-left:auto!important}
 
 	.p-xxl-0{padding:0!important}
 	.p-xxl-1{padding:.25rem!important}

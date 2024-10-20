@@ -26,15 +26,15 @@ const themejs = document.getElementById('themejs'), ajaxURL = themejs.dataset.aj
 
 
 //Splidejs
-// if( typeof Splide !== 'undefined' && document.querySelector('.splide') ){
-// 	document.addEventListener('DOMContentLoaded', function(){
-// 		const splides = document.querySelectorAll( '.splide' );
-// 		for ( var i = 0; i < splides.length; i++ ) {
-// 			if( typeof( splides[i].dataset.splide ) === "undefined" || splides[i].dataset.splide === null ) return false;
-// 			new Splide( splides[i] ).mount();
-// 		}
-// 	});
-// }
+if( typeof Splide !== 'undefined' && document.querySelector('.splide') ){
+	document.addEventListener('DOMContentLoaded', function(){
+		const splides = document.querySelectorAll( '.splide' );
+		for ( var i = 0; i < splides.length; i++ ) {
+			if( typeof( splides[i].dataset.splide ) === "undefined" || splides[i].dataset.splide === null ) return false;
+			new Splide( splides[i] ).mount();
+		}
+	});
+}
 
 //Woocommerce Notices
 // document.addEventListener('DOMContentLoaded', function() {

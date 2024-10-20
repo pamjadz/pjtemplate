@@ -1,24 +1,18 @@
 @font-face{
-	font-family:iransans;
-	font-weight:300;
-	font-display:swap;
-	src:url(../font/iransans/light.woff2) format("woff2");
-}
-@font-face{
-	font-family:iransans;
+	font-family:Peyda;
 	font-weight:400;
 	font-display:swap;
-	src:url(../font/iransans/regular.woff2) format("woff2");
+	src:url(../media/peyda/Regular.woff2) format('woff2');
 }
 @font-face{
-	font-family:iransans;
-	font-weight:500;
+	font-family:Peyda;
+	font-weight:500 700;
 	font-display:swap;
-	src:url(../font/iransans/medium.woff2) format("woff2");
+	src:url(../media/peyda/Bold.woff2) format('woff2');
 }
-@font-face {
-	font-family:iransans;
-	font-weight:700;
+@font-face{
+	font-family:Peyda;
+	font-weight:800 1000;
 	font-display:swap;
-	src:url(../font/iransans/bold.woff2) format("woff2");
+	src:url(../media/peyda/Black.woff2) format('woff2');
 }

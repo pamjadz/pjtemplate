@@ -33,8 +33,28 @@ wp_body_open();
 if( isset($args['only_meta']) && TRUE === $args['only_meta'] ) return;
 ?>
 
-<header id="siteHead">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis officiis a illum est et in, voluptates accusantium earum, voluptatem quae tenetur similique assumenda dicta quisquam. Ipsa nobis tempore amet?
+<header id="siteHead" <?php header_class(); ?>>
+	<div class="row g-0 h-100">
+		<div id="logo" class="col-lg-auto d-flex align-items-center justify-content-center px-4 bg-card">TEST<?php //the_logo(); ?></div>
+		<div class="col-lg px-4">
+			<?php wp_nav_menu(['theme_location' => 'primary', 'container' => 'ul']); ?>
+		</div>
+		<div class="col-lg-auto d-flex">
+			<button type="button" class="btn btn-icon bg-card h-100 btn-search p-0" data-bs-toggle="collapse" data-bs-target="#searchFormHead" aria-expanded="false" aria-controls="searchFormHead"><svg width="36" height="36"><use xlink:href="#icon-search" /></svg></button>
+			<a href="#" class="btn btn-icon btn-primary h-100">پنل کاربری <svg width="20" height="20" class="ms-3"><use xlink:href="#icon-arrow-end" /></svg></a>
+		</div>
+	</div>
+	<form class="collapse bg-body" id="searchFormHead" action="<?php echo esc_url( home_url() ); ?>">
+		<div class="input-group h-100">
+			<input type="search" class="form-control fsz-24 fw-700 h-100" placeholder="برای جستجو اینجا تایپ کنید&hellip;" value="<?php the_search_query(); ?>">
+		</div>
+	</form>
 </header>
 
-<!--HEADER HERE-->
+<ul id="sticked-menus" class="listunstyled">
+	<li><a href="#" class="d-flex align-items-center"><span class="icon d-flex align-items-center justify-content-center">T</span> <span class="px-3">TEST</span></a></li>
+	<li><a href="#" class="d-flex align-items-center"><span class="icon d-flex align-items-center justify-content-center">T</span> <span class="px-3">TEST</span></a></li>
+	<li><a href="#" class="d-flex align-items-center"><span class="icon d-flex align-items-center justify-content-center">T</span> <span class="px-3">TEST</span></a></li>
+	<li><a href="#" class="d-flex align-items-center"><span class="icon d-flex align-items-center justify-content-center">T</span> <span class="px-3">TEST</span></a></li>
+	<li><a href="#" class="d-flex align-items-center"><span class="icon d-flex align-items-center justify-content-center">T</span> <span class="px-3">TEST</span></a></li>
+</ul>
