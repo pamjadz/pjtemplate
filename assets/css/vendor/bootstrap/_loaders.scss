@@ -1,0 +1,43 @@
+@keyframes spinner-border {
+	to {transform: rotate(360deg)}
+}
+@keyframes spinner-grow {
+	0% {transform: scale(0);}
+	50%{opacity: 1;transform: none;}
+}
+@keyframes placeholder-glow {
+	50%{opacity: 0.2;}
+}
+.spinner-border,.spinner-grow{
+	cursor: wait;
+	display: inline-block;
+	width: var(--spiner_size, 2rem);
+	height: var(--spiner_size, 2rem);
+	vertical-align: text-bottom;
+}
+.spinner-sm{--spiner_size:1rem;}
+.spinner-border{
+	border-radius: 50%;
+	border: 0.25em solid currentColor;
+	border-right-color: transparent;
+	animation: 0.75s linear infinite spinner-border;
+}
+.spinner-grow{
+	opacity: 0;
+	border-radius: 50%;
+	background-color: currentColor;
+	animation: 0.75s linear infinite spinner-grow;
+}
+.skeleton > * , .skeleton-self{
+	cursor: wait;
+	opacity: .5;
+	min-height: var(--skeleton-height, 1em);
+	color: transparent;
+	user-select: none;
+	background-color: $border-color;
+	animation: placeholder-glow 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.spinner-border,.spinner-grow{animation-duration: 1.5s;}
+}

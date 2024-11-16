@@ -1,0 +1,48 @@
+$gutter: 1.5rem;
+$direction: rtl;
+$container: 1320px;
+$text-body: #212529;
+$text-muted: #6c757d;
+$bg-card: white;
+$bg-body: #f8f9fa;
+$border-color: #ced4da;
+$border-radius: 0.375rem;
+
+$colors:(
+	'primary': #007bff,
+	'secondary': #6c757d,
+	'success': #408844,
+	'danger': #d74141,
+	'warning': #f08124,
+	'info': #1892d5,
+);
+
+$breakpoints: ('sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px);
+
+@function RGB_Values($color) {
+	@return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+@mixin fw($weight){
+	font-weight: $weight;
+	font-variation-settings: "wght" $weight;
+}
+
+@mixin media($args...){
+	$query: '';
+	$last: nth($args, length($args));
+	@each $arg in $args {
+		$op: if($arg != $last, ' and ', '');
+		$minmax: if(str-slice($arg, 1, 1) == '<', min-width, max-width);
+		$size: str-slice($arg, 2);
+		$query: append($query, '(#{$minmax}:#{$size})'#{$op});
+	}
+	@media #{$query}{
+		@content;
+	}
+}
+
+%dflex{display:flex;}
+%alignitemscenter{align-items:center;}
+%tranisiton03{transition:0.3;}
+%listunstyled{margin:0;padding:0;list-style:none;}

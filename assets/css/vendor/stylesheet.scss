@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import 'variables';
+@import 'plugins';
+:root{
+	--gutter: #{$gutter};
+	@each $name,$hex in $colors {
+		--#{$name}-color: #{$hex};
+		--#{$name}-color-rgb: #{RGB_Values($hex)};
+	}
+	--bg-card: #{$bg-card};
+	--bg-body: #{$bg-body};
+	--border-color: #{$border-color};
+	--border-color-rgb: #{RGB_Values($border-color)};
+	--border-radius: #{$border-radius};
+	--text-body: #{$text-body};
+	--text-muted: #{$text-muted};
+
+	//Forms Variable
+	--form-py: 0.55rem;
+	--form-px: 1rem;
+	--form-control-border-width: 1px;
+	--form-control-border-color: var(--border-color);
+	--form-control-bg: var(--bg-card);
+	--form-control-radius: calc( var(--border-radius) * 0.5 );
+
+	//Buttons
+	--btn-text: inherit;
+	--btn-color: transparent;
+	--btn-shadow: transparent;
+	// --btn-border: 1px;
+	--btn-py: .55rem;
+	--btn-px: 1rem;
+	--btn-border-radius: calc( var(--border-radius) * 0.5 );
+
+	--backdrop-bg: black;
+}
+
+::selection{color:#fff;background-color:var(--primary-color);}
+
+@import 'fonts';
+
+body{
+	color: var(--text-body);
+	direction: $direction;
+	background-color: var(--bg-body);
+	&.rtl{
+		direction: rtl;
+	}
+	&.ltr{
+		direction: ltr;
+	}
+}
+
+
+@import 'layouts/atoms';
+@import 'layouts/header';
+//Other Layouts
+@import 'layouts/footer';
+@import 'responsive';

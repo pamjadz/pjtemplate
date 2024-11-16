@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Theme Name\n"
+"POT-Creation-Date: 2023-06-17 14:41+0330\n"
+"PO-Revision-Date: 2023-06-17 14:42+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: content/comment-item.php:20
+msgid "ago"
+msgstr "پیش"
+
+#: content/comment-item.php:30
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما در انتظار تایید است."
+
+#: functions.php:29
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: functions.php:30
+msgid "Responsive Menu"
+msgstr ""
+
+#: functions.php:36
+msgid "Sidebar"
+msgstr "ستون کناری"
+
+#. Theme Name of the plugin/theme
+msgid "Theme Name"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://..."
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Exclusive template for SITENAME website. designed by DESIGNER and developed "
+"by DEVELOPER."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Arvandec"
+msgstr "آژانس دیجیتال مارکتینگ آروند"
+
+#. Author URI of the plugin/theme
+msgid "https://arvandec.com"
+msgstr "‫https://arvandec.com"

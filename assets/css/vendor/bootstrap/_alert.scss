@@ -1,0 +1,24 @@
+.alert{
+	--alert-color: var(--text-muted);
+	--alert-background: #{rgba(black,0.07)};
+	color: var(--alert-color);
+	padding: 0.75rem 1rem;
+	position: relative;
+	margin-bottom: 1rem;
+	border-radius: var(--border-radius);
+	background-color: var(--alert-background);
+	&.alert-dismissible{
+		padding-inline-end: 3rem;
+		.btn-close{
+			top:1rem;
+			position:absolute;
+			inset-inline-end: 1rem;
+		}
+	}
+	@each $name,$hex in $colors {
+		&.alert-#{$name}{
+			--alert-color: var(--#{$name}-color);
+			--alert-background: var(--#{$name}-color-100);
+		}
+	}
+}
